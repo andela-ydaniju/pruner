@@ -1,5 +1,5 @@
 $vivid-blue: #2196f3;
-$white: #fff;
+$full-white: #ffffff;
 $material-red: #ef9a9a;
 $grayish-cyan: #aebcb9;
 $default-blue: #0d1c8a;
@@ -9,7 +9,7 @@ $default-blue: #0d1c8a;
 }
 
 .default-color-text {
-  color: $white !important;
+  color: $full-white !important;
 }
 
 .icon-block {
@@ -36,14 +36,14 @@ $default-blue: #0d1c8a;
 }
 
 .text-h {
-  color: $white;
+  color: $full-white;
   font-size: 6em;
   font-weight: 100;
   padding: 15% 0;
 }
 
 .brand-logo {
-  color: $white;
+  color: $full-white;
   display: inline-block;
   font-size: 2.1rem;
   font-style: normal;
@@ -97,7 +97,7 @@ $default-blue: #0d1c8a;
 }
 
 nav ul a {
-  color: $white;
+  color: $full-white;
   display: block;
   font-size: 1.2rem;
   font-weight: 300;
@@ -115,7 +115,7 @@ nav ul a {
   }
 
   &.selected {
-    background-color: $white;
+    background-color: $full-white;
 
     b {
       color: $vivid-blue;
@@ -226,7 +226,7 @@ nav ul a {
 
 //Preloader
 #preloader {
-  background-color: $white; // change if the mask should have another color then
+  background-color: $full-white; // change if the mask should have another color then
   // white
   bottom: 0;
   left: 0;
@@ -250,7 +250,7 @@ nav ul a {
 
 @media only screen and (max-width: 480px) {
   .text-h {
-    color: $white;
+    color: $full-white;
     font-size: 5em;
     font-weight: 100;
     padding: 4% 0;
@@ -259,7 +259,7 @@ nav ul a {
 
 input,
 textarea {
-  border-bottom: 1px solid $white;
+  border-bottom: 1px solid $full-white;
 }
 
 .button-collapse {
