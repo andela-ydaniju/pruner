@@ -1,15 +1,15 @@
-$vivid-blue: #2196f3;
+$vivid-blue: #93c5ea;
 $full-white: #ffffff;
 $material-red: #ef9a9a;
 $grayish-cyan: #aebcb9;
-$default-blue: #0d1c8a;
+$default-blue: #0b2538;
 
 .default-color {
   background-color: $default-blue !important;
 }
 
 .default-color-text {
-  color: $full-white !important;
+  color: $full-white;
 }
 
 .icon-block {
