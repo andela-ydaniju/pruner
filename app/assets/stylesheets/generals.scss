@@ -25,6 +25,9 @@ $default-blue: #0d1c8a;
 
 #index-banner {
   background-color: $vivid-blue;
+  background-image: image-url("trim_image");
+  background-position: center;
+  background-repeat: no-repeat;
   max-height: 864px;
   min-height: 632px;
   position: relative;
