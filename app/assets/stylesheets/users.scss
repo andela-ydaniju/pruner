@@ -1,6 +1,35 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-p {
-  text-align: center !important;
+.row.container.signup-box.center-align,
+.row.container.signin-box.center-align {
+  height: 35em;
+  position: relative;
+}
+
+.signup.card-panel,
+.signin.card-panel {
+  border-radius: 2%;
+  width: 90%;
+}
+
+.row {
+  &.entry-signin,
+  &.entry-signup {
+    margin: auto;
+    text-align: center;
+    width: 80%;
+  }
+
+  &.submit-signup,
+  &.submit-signin {
+    margin-top: 1em;
+  }
+
+  &.comment-signin,
+  &.comment-signup {
+    p {
+      text-align: center;
+    }
+  }
 }
