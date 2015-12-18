@@ -1,0 +1,305 @@
+$vivid-blue: #93c5ea;
+$full-white: #ffffff;
+$material-red: #ef9a9a;
+$grayish-cyan: #aebcb9;
+$default-blue: #0b2538;
+
+.default-color {
+  background-color: $default-blue !important;
+}
+
+.default-color-text {
+  color: $full-white;
+}
+
+.icon-block {
+  padding: 0 15px;
+}
+
+#intro,
+#work,
+#team {
+  padding-top: 4rem;
+}
+
+
+#index-banner {
+  background-color: $vivid-blue;
+  background-image: image-url("trim_image");
+  background-position: center;
+  background-repeat: no-repeat;
+  max-height: 864px;
+  min-height: 632px;
+  position: relative;
+}
+
+#nav-f {
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+}
+
+.text-h {
+  color: $full-white;
+  font-size: 6em;
+  font-weight: 100;
+  padding: 15% 0;
+}
+
+.brand-logo {
+  color: $full-white;
+  display: inline-block;
+  font-size: 2.1rem;
+  font-style: normal;
+  font-weight: 100;
+  letter-spacing: 7px;
+  padding: 0;
+  position: absolute;
+}
+
+.text-h2 {
+  font-weight: 100;
+  line-height: 4.5rem;
+  margin-bottom: 4%;
+}
+
+.span-h2 {
+  color: $vivid-blue;
+  font-weight: 300;
+}
+
+.text-b {
+  color: $vivid-blue;
+}
+
+.in {
+  font-style: normal !important;
+  font-weight: 400 !important;
+}
+
+.promo i {
+  color: $vivid-blue;
+  display: block;
+  font-size: 7rem;
+}
+
+.card-content a {
+  color: $vivid-blue;
+}
+
+.card-content a:hover {
+  color: $vivid-blue;
+}
+
+#work,
+#team {
+  background: rgb(247, 247, 247);
+}
+
+.text-pink {
+  color: $material-red;
+}
+
+nav ul a {
+  color: $full-white;
+  display: block;
+  font-size: 1.2rem;
+  font-weight: 300;
+  letter-spacing: 2px;
+  padding: 0 15px;
+}
+
+.cd-headline.type .cd-words-wrapper {
+  overflow: hidden;
+  vertical-align: top;
+
+  .waiting::after {
+    -moz-animation: cd-pulse 1s infinite;
+    -webkit-animation: cd-pulse 1s infinite;
+  }
+
+  &.selected {
+    background-color: $full-white;
+
+    b {
+      color: $vivid-blue;
+    }
+  }
+
+  &.selected::after {
+    visibility: hidden;
+  }
+}
+
+.cd-headline.type .cd-words-wrapper::after {
+  // vertical bar
+  background-color: $grayish-cyan;
+  bottom: auto;
+  content: "";
+  height: 90%;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  width: 1px;
+}
+
+.cd-headline.type b {
+  visibility: hidden;
+
+  &.is-visible {
+    visibility: visible;
+  }
+}
+
+.cd-headline.type i {
+  position: absolute;
+  visibility: hidden;
+
+  .in {
+    position: relative;
+    visibility: visible;
+  }
+}
+
+@-webkit-keyframes cd-pulse {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateY(-50%) scale(1);
+  }
+
+  40% {
+    opacity: 0;
+    -webkit-transform: translateY(-50%) scale(0.9);
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(-50%) scale(0);
+  }
+}
+@-moz-keyframes cd-pulse {
+  0% {
+    opacity: 1;
+    -moz-transform: translateY(-50%) scale(1);
+  }
+
+  40% {
+    opacity: 0;
+    -moz-transform: translateY(-50%) scale(0.9);
+  }
+
+  100% {
+    opacity: 0;
+    -moz-transform: translateY(-50%) scale(0);
+  }
+}
+
+@keyframes cd-pulse {
+  0% {
+    opacity: 1;
+    -moz-transform: translateY(-50%) scale(1);
+    -ms-transform: translateY(-50%) scale(1);
+    -o-transform: translateY(-50%) scale(1);
+    -webkit-transform: translateY(-50%) scale(1);
+    transform: translateY(-50%) scale(1);
+  }
+
+  40% {
+    opacity: 0;
+    -moz-transform: translateY(-50%) scale(0.9);
+    -ms-transform: translateY(-50%) scale(0.9);
+    -o-transform: translateY(-50%) scale(0.9);
+    -webkit-transform: translateY(-50%) scale(0.9);
+    transform: translateY(-50%) scale(0.9);
+  }
+
+  100% {
+    opacity: 0;
+    -moz-transform: translateY(-50%) scale(0);
+    -ms-transform: translateY(-50%) scale(0);
+    -o-transform: translateY(-50%) scale(0);
+    -webkit-transform: translateY(-50%) scale(0);
+    transform: translateY(-50%) scale(0);
+  }
+}
+
+//Preloader
+#preloader {
+  background-color: $full-white; // change if the mask should have another color then
+  // white
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 1200; // makes sure it stays on top
+}
+
+#status {
+  background-image: url("../img/status.gif"); // path to your loading animation
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 200px;
+  left: 50%; // centers the loading animation horizontally one the screen
+  margin: -100px 0 0 -100px; // is width and height divided by two
+  position: absolute;
+  top: 50%; // centers the loading animation vertically one the screen
+  width: 200px;
+}
+
+@media only screen and (max-width: 480px) {
+  .text-h {
+    color: $full-white;
+    font-size: 5em;
+    font-weight: 100;
+    padding: 4% 0;
+  }
+}
+
+input,
+textarea {
+  border-bottom: 1px solid $full-white;
+}
+
+.button-collapse {
+  left: -25px;
+}
+
+.card-avatar .waves-effect {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.card-avatar img {
+  border-radius: 75px;
+  height: 150px;
+  width: 150px;
+}
+
+.card-avatar .card-content {
+  text-align: center;
+
+  i {
+    font-size: 1.5rem;
+  }
+
+  .card-title {
+    line-height: 30px !important;
+  }
+}
+
+.card .card-content p {
+  margin: 15px 0;
+}
+
+.parallax-container {
+  max-height: 400px;
+}
+
+.page-footer {
+  margin-top: 0 !important;
+}
