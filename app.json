@@ -1,14 +1,9 @@
 {
-  "name": "pruner-staging",
+  "name": "pruner",
   "scripts": {
+    "postdeploy": "bundle exec rake db:migrate"
   },
   "env": {
-    "GITHUB_USERNAME": "andela-ydaniju",
-    "LANG": "en_US.UTF-8",
-    "RACK_ENV": "production",
-    "RAILS_ENV": "production",
-    "RAILS_SERVE_STATIC_FILES": "enabled",
-    "SECRET_KEY_BASE": " 292d312b5bac34adc0d0b2cf210e0ccc5f77eaa20d30b5dfd07e04b0c8977d24a392b0a7cab5dc28de4a800da74931d2d2d3c2a8f350f2c975080891b852c8f8"
   },
   "addons": [
     "heroku-postgresql"
