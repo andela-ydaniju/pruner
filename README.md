@@ -1,1 +1,1 @@
-[![Code Climate](https://codeclimate.com/github/andela-ydaniju/pruner/badges/gpa.svg)](https://codeclimate.com/github/andela-ydaniju/pruner)
+[![Code Climate](https://codeclimate.com/github/andela-ydaniju/pruner/badges/gpa.svg)](https://codeclimate.com/github/andela-ydaniju/pruner) [![Circle CI](https://circleci.com/gh/andela-ydaniju/pruner.svg?style=svg)](https://circleci.com/gh/andela-ydaniju/pruner) [![Coverage Status](https://coveralls.io/repos/andela-ydaniju/pruner/badge.svg?branch=master&service=github)](https://coveralls.io/github/andela-ydaniju/pruner?branch=master)
