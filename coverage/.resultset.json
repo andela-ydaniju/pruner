@@ -216,6 +216,17 @@
         null,
         null
       ],
+      "C:/Users/ADEDIRAN/pruner/config/initializers/rails_env_favicon.rb": [
+        1,
+        null,
+        1,
+        null,
+        1,
+        null,
+        1,
+        1,
+        null
+      ],
       "C:/Users/ADEDIRAN/pruner/config/initializers/session_store.rb": [
         null,
         null,
@@ -239,6 +250,7 @@
         null
       ],
       "C:/Users/ADEDIRAN/pruner/config/routes.rb": [
+        1,
         1,
         1,
         1,
@@ -330,8 +342,19 @@
         null,
         1,
         null
+      ],
+      "C:/Users/ADEDIRAN/pruner/spec/models/user_spec.rb": [
+        1,
+        null,
+        1,
+        null,
+        null
+      ],
+      "C:/Users/ADEDIRAN/pruner/app/models/user.rb": [
+        1,
+        null
       ]
     },
-    "timestamp": 1450471361
+    "timestamp": 1450568142
   }
 }

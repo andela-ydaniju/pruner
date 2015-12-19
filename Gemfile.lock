@@ -114,6 +114,9 @@ GEM
       activesupport (>= 4.2.0.beta, < 5.0)
       nokogiri (~> 1.6.0)
       rails-deprecated_sanitizer (>= 1.0.1)
+    rails-env-favicon (0.0.5)
+      railties (>= 3.1)
+      tinycon-rails
     rails-html-sanitizer (1.0.2)
       loofah (~> 2.0)
     railties (4.2.4)
@@ -175,6 +178,8 @@ GEM
     thread_safe (0.3.5)
     tilt (2.0.1)
     tins (1.6.0)
+    tinycon-rails (0.0.1)
+      railties (>= 3.1)
     turbolinks (2.5.3)
       coffee-rails
     tzinfo (1.2.2)
@@ -208,6 +213,7 @@ DEPENDENCIES
   pry-byebug
   puma
   rails (= 4.2.4)
+  rails-env-favicon
   rspec-rails (~> 3.0)
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)

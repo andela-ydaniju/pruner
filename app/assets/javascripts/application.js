@@ -16,4 +16,5 @@
 //= require modernizr
 //= require materialize
 //= require init
+//= require rails_env_favicon
 //= require_tree .
