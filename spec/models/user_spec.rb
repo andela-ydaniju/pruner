@@ -29,9 +29,11 @@ RSpec.describe User, type: :model do
       expect(user.valid?).to be false
     end
 
-    it "has email which is case insensitive" do
-      user.email = "AJ@a.CoM"
-      expect(user.valid?).to be true
+    it "has email which is case insensitive and unique" do
+      user.email = "A-_J@a.CoM"
+      duplicate_user = user.dup
+      duplicate_user.email = user.email.downcase
+      expect(duplicate_user.valid?).to be true
     end
   end
 end
