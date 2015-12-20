@@ -4,7 +4,9 @@ RSpec.describe User, type: :model do
   let(:user) do
     User.new(
       username: "andela-ydaniju",
-      email: "yusuf.daniju@andela.com"
+      email: "yusuf.daniju@andela.com",
+      password: "alloweed",
+      password_confirmation: "alloweed"
     )
   end
 
