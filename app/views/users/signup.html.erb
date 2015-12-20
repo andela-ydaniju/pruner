@@ -1,28 +1,28 @@
 <div class="row container signup-box center-align">
     <div class = "col l5 m8 s12 signup">
-      <form class="signup card-panel">
+      <%= form_tag("/users/signup", method: "post", class: "signup card-panel") do -%>
         <div class="row entry-signup">
           <div class="input-field">
-            <input id="username" type="text" class="validate">
-            <label for="username">Username</label>
+            <%= text_field_tag "username", "", class: "validate" %>
+            <%= label_tag :username, "Username" %>
           </div>
         </div>
         <div class="row entry-signup">
           <div class="input-field">
-            <input id="email" type="email" class="validate">
-            <label for="email">Email</label>
+            <%= text_field_tag "email", "", class: "validate" %>
+            <%= label_tag :email, "Email" %>
           </div>
         </div>
         <div class="row entry-signup">
           <div class="input-field">
-            <input id="password" type="password" class="validate">
-            <label for="password">Password</label>
+            <%= text_field_tag "password", "", class: "validate" %>
+            <%= label_tag :password, "Password" %>
           </div>
         </div>
         <div class="row entry-signup">
           <div class="input-field">
-            <input id="password" type="password" class="validate">
-            <label for="password">Password</label>
+            <%= text_field_tag "password", "", class: "validate" %>
+            <%= label_tag :password, "Password" %>
           </div>
         </div>
         <div class="row submit-signup">
@@ -32,6 +32,6 @@
         <div class="row comment-signup">
           <p>If you got an account, please Sign In</p>
         </div>
-      </form>
+      <% end -%>
     </div>
 </div>

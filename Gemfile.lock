@@ -37,6 +37,7 @@ GEM
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
     arel (6.0.3)
+    bcrypt (3.1.10-x64-mingw32)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
     builder (3.2.2)
@@ -114,6 +115,9 @@ GEM
       activesupport (>= 4.2.0.beta, < 5.0)
       nokogiri (~> 1.6.0)
       rails-deprecated_sanitizer (>= 1.0.1)
+    rails-env-favicon (0.0.5)
+      railties (>= 3.1)
+      tinycon-rails
     rails-html-sanitizer (1.0.2)
       loofah (~> 2.0)
     railties (4.2.4)
@@ -175,6 +179,8 @@ GEM
     thread_safe (0.3.5)
     tilt (2.0.1)
     tins (1.6.0)
+    tinycon-rails (0.0.1)
+      railties (>= 3.1)
     turbolinks (2.5.3)
       coffee-rails
     tzinfo (1.2.2)
@@ -197,6 +203,7 @@ PLATFORMS
   x64-mingw32
 
 DEPENDENCIES
+  bcrypt (~> 3.1.7)
   coffee-rails (~> 4.1.0)
   coveralls
   font-awesome-sass (~> 4.5.0)
@@ -208,6 +215,7 @@ DEPENDENCIES
   pry-byebug
   puma
   rails (= 4.2.4)
+  rails-env-favicon
   rspec-rails (~> 3.0)
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)

@@ -11,20 +11,19 @@
     <nav id="nav-f" class="default-color" role="navigation">
         <div class="container">
             <div class="nav-wrapper">
-            <a href="#" id="logo-container" class="brand-logo">Pruner</a>
+              <%= link_to "Pruner", "/", id: "logo-container", class: "brand-logo" %>
                 <ul class="right hide-on-med-and-down">
-                    <li><a href="#intro">Service</a></li>
-                    <li><a href="#work">Work</a></li>
-                    <li><a href="#team">Sign In</a></li>
-                    <li><a href="#contact">Sign Up</a></li>
-                    <li><a href="https://github.com/andela-ydaniju/pruner" target="_blank">Download</a></li>
+                    <li><%= link_to "Services", "#intro" %></li>
+                    <li><%= link_to "Work", "#work" %></li>
+                    <li><%= link_to "Sign In", signin_path %></li>
+                    <li><%= link_to "Sign Up", signup_path %></li>
                 </ul>
                 <ul id="nav-mobile" class="side-nav">
-                    <li><a href="#intro">Service</a></li>
-                    <li><a href="#work">Work</a></li>
-                    <li><a href="#team">Sign In</a></li>
-                    <li><a href="#contact">Sign Up</a></li>
-                    <li><a href="https://github.com/andela-ydaniju/pruner" target="_blank">Download</a></li>
+                  <li><%= link_to "Services", "#intro" %></li>
+                  <li><%= link_to "Work", "#work" %></li>
+                  <li><%= link_to "Sign In", signin_path %></li>
+                  <li><%= link_to "Sign Up", signup_path %></li>
+                    <!-- <li><a href="https://github.com/andela-ydaniju/pruner" target="_blank">Download</a></li> -->
                 </ul>
             <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
             </div>
