@@ -3,14 +3,14 @@
       <form class="signin card-panel">
         <div class="row entry-signin">
           <div class="input-field">
-            <input id="username" type="text" class="validate">
-            <label for="username">Username</label>
+            <%= text_field_tag "email", "", class: "validate" %>
+            <%= label_tag :email, "Email" %>
           </div>
         </div>
         <div class="row entry-signin">
           <div class="input-field">
-            <input id="password" type="password" class="validate">
-            <label for="password">Password</label>
+            <%= text_field_tag "password", "", class: "validate" %>
+            <%= label_tag :password, "Password" %>
           </div>
         </div>
         <div class="row submit-signin">
