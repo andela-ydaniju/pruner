@@ -37,5 +37,20 @@ RSpec.describe User, type: :model do
       duplicate_user.email = user.email.downcase
       expect(duplicate_user.valid?).to be true
     end
+
+    it "has a password which must be entered" do
+      user.password = user.password_confirmation = nil
+      expect(user.valid?).to be false
+    end
+
+    it "has a password which must be greater than eight chars" do
+      user.password = user.password_confirmation = "abeokuta"
+      expect(user.valid?).to be true
+    end
+
+    it "has a password which must be eight chars or greater" do
+      user.password = user.password_confirmation = "abeokut"
+      expect(user.valid?).to be false
+    end
   end
 end
