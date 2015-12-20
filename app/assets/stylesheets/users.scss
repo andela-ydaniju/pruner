@@ -1,16 +1,19 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.row.container.signup-box.center-align,
-.row.container.signin-box.center-align {
-  height: 35em;
-  position: relative;
+$red: #ff0000;
+
+.signup.card-panel {
+  border-radius: 2%;
+  margin-bottom: 1.4em;
+  margin-top: 3em;
+  width: 90%;
 }
 
-.signup.card-panel,
 .signin.card-panel {
   border-radius: 2%;
-  margin: auto;
+  margin-bottom: 3.4em;
+  margin-top: 5em;
   width: 90%;
 }
 
@@ -32,5 +35,22 @@
     p {
       text-align: center;
     }
+  }
+}
+
+#error_explanation {
+  color: $red;
+
+  ul {
+    color: $red;
+    margin: 0 0 30px;
+  }
+}
+
+.field_with_errors {
+  @extend .has-error;
+
+  .form-control {
+    color: $state-danger-text;
   }
 }

@@ -150,6 +150,7 @@ linters:
   SelectorFormat:
     enabled: true
     convention: hyphenated_lowercase # or 'strict_BEM', or 'hyphenated_BEM', or 'snake_case', or 'camel_case', or a regex pattern
+    ignored_names: ["error_explanation", "field_with_errors"]
 
   Shorthand:
     enabled: true
