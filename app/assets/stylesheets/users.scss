@@ -1,6 +1,8 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+$red: #ff0000;
+
 .signup.card-panel {
   border-radius: 2%;
   margin-bottom: 1.4em;
@@ -37,15 +39,17 @@
 }
 
 #error_explanation {
-  color: red;
+  color: $red;
+
   ul {
-    color: red;
-    margin: 0 0 30px 0;
+    color: $red;
+    margin: 0 0 30px;
   }
 }
 
 .field_with_errors {
   @extend .has-error;
+
   .form-control {
     color: $state-danger-text;
   }
