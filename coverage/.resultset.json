@@ -254,6 +254,7 @@
         1,
         1,
         1,
+        1,
         null
       ],
       "C:/Users/ADEDIRAN/pruner/app/helpers/application_helper.rb": [
@@ -294,6 +295,33 @@
       ],
       "C:/Users/ADEDIRAN/pruner/app/controllers/users_controller.rb": [
         1,
+        1,
+        0,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null,
+        1,
+        0,
+        0,
+        null,
+        null,
+        0,
+        null,
+        null,
+        null,
+        1,
+        null,
+        1,
+        0,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
         null
       ],
       "C:/Users/ADEDIRAN/pruner/spec/helpers/application_helper_spec.rb": [
@@ -417,6 +445,6 @@
         null
       ]
     },
-    "timestamp": 1450593186
+    "timestamp": 1450603224
   }
 }
