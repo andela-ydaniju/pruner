@@ -2,6 +2,13 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 $red: #ff0000;
+$body-background: #fdf8f5;
+$sky: #a3cded;
+$light-brown: #edc3a3;
+
+body {
+  background-color: $body-background;
+}
 
 .signup.card-panel {
   border-radius: 2%;
@@ -45,4 +52,14 @@ $red: #ff0000;
     color: $red;
     margin: 0 0 30px;
   }
+}
+
+.col.l3.m5.s5.user-show {
+  background-color: $sky;
+  height: 30em;
+}
+
+.col.l9.m7.s7.user-show {
+  background-color: $light-brown;
+  height: 30em;
 }
