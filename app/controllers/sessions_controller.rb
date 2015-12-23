@@ -16,6 +16,11 @@ class SessionsController < ApplicationController
   def destroy
   end
 
+  def signin(user)
+    cookies.permanent[:remember_token] = user.remember_token
+    self.current_user = user
+  end
+
   def current_user
     if @current_user.nil?
       @current_user ||= User.find_by(id: session[:user_id])

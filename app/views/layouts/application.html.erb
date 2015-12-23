@@ -16,5 +16,6 @@
   <%= render "partials/footer" %>
   <%= javascript_include_tag "application"%>
   <%= debug(params) if Rails.env.development? %>
+  <%= debug ENV.to_h.to_yaml if Rails.env.development?%>
 </body>
 </html>

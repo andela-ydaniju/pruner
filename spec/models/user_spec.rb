@@ -2,12 +2,7 @@ require "rails_helper"
 
 RSpec.describe User, type: :model do
   let(:user) do
-    User.new(
-      username: "andela-ydaniju",
-      email: "yusuf.daniju@andela.com",
-      password: "alloweed",
-      password_confirmation: "alloweed"
-    )
+    build(:user)
   end
 
   context "when initialized" do
@@ -43,14 +38,23 @@ RSpec.describe User, type: :model do
       expect(user.valid?).to be false
     end
 
-    it "has a password which must be greater than eight chars" do
-      user.password = user.password_confirmation = "abeokuta"
-      expect(user.valid?).to be true
-    end
-
     it "has a password which must be eight chars or greater" do
       user.password = user.password_confirmation = "abeokut"
       expect(user.valid?).to be false
     end
   end
+
+  # context "when destroyed" do
+  #   new_user = User.new(
+  #     username: "Example User",
+  #     email: "user@example.com",
+  #     password: "foobarbaz",
+  #     password_confirmation: "foobarbaz"
+  #   )
+  #   it "has its associated links destroyed, too" do
+  #     new_user.save
+  #     new_user.links.create!(name: "www.goal.com")
+  #     expect { new_user.destroy }.to change { Link.count }.by(-1)
+  #   end
+  # end
 end
