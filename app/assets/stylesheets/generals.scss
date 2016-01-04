@@ -1,9 +1,3 @@
-$vivid-blue: #93c5ea;
-$full-white: #ffffff;
-$material-red: #ef9a9a;
-$grayish-cyan: #aebcb9;
-$default-blue: #0b2538;
-
 .default-color {
   background-color: $default-blue !important;
 }
@@ -17,8 +11,7 @@ $default-blue: #0b2538;
 }
 
 #intro,
-#work,
-#team {
+#work {
   padding-top: 4rem;
 }
 
@@ -302,4 +295,15 @@ textarea {
 
 .page-footer {
   margin-top: 0 !important;
+}
+
+.link-form {
+
+  .home-link {
+    width: 30%;
+  }
+}
+
+.section.scrollspy.second {
+  background-color: $body-background !important;
 }

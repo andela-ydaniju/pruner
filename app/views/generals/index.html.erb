@@ -1,15 +1,41 @@
-<%=provide(:title, "Home")%>
+<%= provide(:title, "Home") %>
 
 <!--Hero-->
 <div class="section no-pad-bot" id="index-banner">
-    <div class="container">
-        <h1 class="text_h center header cd-headline letters type">
-          Get a nice trim URL
-        </h1>
-    </div>
-</div>
+  <div class="container">
+    <h1 class="text_h center header cd-headline letters type">
+      Get a nice trim URL
+    </h1>
+    <div class="link-form">
+      <!-- <form class="home-link">
+        <input type="text" />
+        <input type="button" value="prune link" />
+      </form> -->
+      <%= form_for(@link, remote: true) do |f| %>
+        <% if @link.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(@link.errors.count, "error") %> prohibited this link from being saved:</h2>
 
-<!--Intro and service-->
+            <ul>
+            <% @link.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
+            <% end %>
+            </ul>
+          </div>
+        <% end %>
+        <!-- <div>
+          <%= link_to image_tag("logo.png"), root_path %>
+        </div> -->
+        <div class="field">
+          <%= f.text_field :name, :class => "form-control", :placeholder => "Paste a link to shorten" %>
+        </div>
+        <div class="actions">
+          <%= f.submit 'Shorten Me', :class => "btn btn-primary"%>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
 <div id="intro" class="section scrollspy">
     <div class="container">
         <div class="row">
@@ -42,101 +68,52 @@
     </div>
 </div>
 
-<!--Work-->
 <div class="section scrollspy" id="work">
     <div class="container">
-        <h2 class="header text_b">Work </h2>
+        <h2 class="header text_b">Top Links </h2>
         <div class="row">
+          <% @display_links.each do |link| %>
             <div class="col s12 m4 l4">
                 <div class="card">
                     <div class="card-image waves-effect waves-block waves-light">
                         <img class="activator" src="">
                     </div>
                     <div class="card-content">
-                        <span class="card-title activator grey-text text-darken-4">Link <i class="mdi-navigation-more-vert right"></i></span>
-                        <p><a href="#">Project link</a></p>
+                        <!-- <span class="card-title activator grey-text text-darken-4"><%= link.name %> <i class="mdi-navigation-more-vert right"></i></span> -->
+                        <p><%= link_to link.full_link, link.name %></p>
                     </div>
                     <div class="card-reveal">
-                        <span class="card-title grey-text text-darken-4">Link <i class="mdi-navigation-close right"></i></span>
+                        <!-- <span class="card-title grey-text text-darken-4"><%= link.name %><i class="mdi-navigation-close right"></i></span> -->
                         <p>Here is some more information about this project that is only revealed once clicked on.</p>
                     </div>
                 </div>
             </div>
+          <% end %>
+        </div>
+    </div>
+</div>
+<div class="section scrollspy second" id="work">
+    <div class="container">
+        <h2 class="header text_b">Top Links </h2>
+        <div class="row">
+          <% @display_links.each do |link| %>
             <div class="col s12 m4 l4">
                 <div class="card">
                     <div class="card-image waves-effect waves-block waves-light">
                         <img class="activator" src="">
                     </div>
                     <div class="card-content">
-                        <span class="card-title activator grey-text text-darken-4">Link <i class="mdi-navigation-more-vert right"></i></span>
-                        <p><a href="#">Project link</a></p>
+                        <!-- <span class="card-title activator grey-text text-darken-4"><%= link.name %> <i class="mdi-navigation-more-vert right"></i></span> -->
+                        <p><%= link_to link.full_link, link.name %></p>
+                        <%= link.shortened_link %>
                     </div>
                     <div class="card-reveal">
-                        <span class="card-title grey-text text-darken-4">Link <i class="mdi-navigation-close right"></i></span>
+                        <!-- <span class="card-title grey-text text-darken-4"><%= link.name %><i class="mdi-navigation-close right"></i></span> -->
                         <p>Here is some more information about this project that is only revealed once clicked on.</p>
                     </div>
                 </div>
             </div>
-            <div class="col s12 m4 l4">
-                <div class="card">
-                    <div class="card-image waves-effect waves-block waves-light">
-                        <img class="activator" src="">
-                    </div>
-                    <div class="card-content">
-                        <span class="card-title activator grey-text text-darken-4">Link <i class="mdi-navigation-more-vert right"></i></span>
-                        <p><a href="#">Project link</a></p>
-                    </div>
-                    <div class="card-reveal">
-                        <span class="card-title grey-text text-darken-4">Link <i class="mdi-navigation-close right"></i></span>
-                        <p>Here is some more information about this project that is only revealed once clicked on.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col s12 m4 l4">
-                <div class="card">
-                    <div class="card-image waves-effect waves-block waves-light">
-                        <img class="activator" src="">
-                    </div>
-                    <div class="card-content">
-                        <span class="card-title activator grey-text text-darken-4">Link <i class="mdi-navigation-more-vert right"></i></span>
-                        <p><a href="#">Project link</a></p>
-                    </div>
-                    <div class="card-reveal">
-                        <span class="card-title grey-text text-darken-4">Link <i class="mdi-navigation-close right"></i></span>
-                        <p>Here is some more information about this project that is only revealed once clicked on.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col s12 m4 l4">
-                <div class="card">
-                    <div class="card-image waves-effect waves-block waves-light">
-                        <img class="activator" src="">
-                    </div>
-                    <div class="card-content">
-                        <span class="card-title activator grey-text text-darken-4">Link <i class="mdi-navigation-more-vert right"></i></span>
-                        <p><a href="#">Project link</a></p>
-                    </div>
-                    <div class="card-reveal">
-                        <span class="card-title grey-text text-darken-4">Link <i class="mdi-navigation-close right"></i></span>
-                        <p>Here is some more information about this project that is only revealed once clicked on.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col s12 m4 l4">
-                <div class="card">
-                    <div class="card-image waves-effect waves-block waves-light">
-                        <img class="activator" src="">
-                    </div>
-                    <div class="card-content">
-                        <span class="card-title activator grey-text text-darken-4">Link <i class="mdi-navigation-more-vert right"></i></span>
-                        <p><a href="#">Project link</a></p>
-                    </div>
-                    <div class="card-reveal">
-                        <span class="card-title grey-text text-darken-4">Link <i class="mdi-navigation-close right"></i></span>
-                        <p>Here is some more information about this project that is only revealed once clicked on.</p>
-                    </div>
-                </div>
-            </div>
+          <% end %>
         </div>
     </div>
 </div>

@@ -1,13 +1,6 @@
-// Place all the styles related to the Users controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
-$red: #ff0000;
-$body-background: #fdf8f5;
-$sky: #a3cded;
-$light-brown: #edc3a3;
-
 body {
   background-color: $body-background;
+  font-family: $default-font;
 }
 
 .signup.card-panel {

@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
+    @links = @user.links.paginate(page: params[:page], per_page: 16)
   end
 
   def signup

@@ -1,3 +1,4 @@
+<%= provide(:title, "Dashboard") %>
 <div class="row user-show">
   <div class="row container intro user-show">
     Welcome <%= @user.username %>
@@ -6,6 +7,12 @@
 
   </div>
   <div class="col l9 m7 s7 user-show">
-
+    <% if @user.links.any? %>
+      <h5>You have <%= @user.links.count %> pruned links</h5>
+      <ol class="links">
+        <%= render @links %>
+      </ol>
+      <%= will_paginate @links %>
+    <% end %>
   </div>
 </div>

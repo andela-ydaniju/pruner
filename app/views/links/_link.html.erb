@@ -1,0 +1,7 @@
+<li id="link-<%= link.id %>">
+  <!-- <span class="user"><%= link_to link.user.username, link.user %></span> -->
+  <span class="name"><%= link.name %></span>
+  <span class="timestamp">
+    Pruned <%= time_ago_in_words(link.created_at) %> ago.
+  </span>
+</li>
