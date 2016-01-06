@@ -9,11 +9,4 @@ RSpec.describe UsersController, type: :controller do
       expect(response).to render_template("signup")
     end
   end
-
-  context "signin" do
-    it "render signin template" do
-      get :signin
-      expect(response).to render_template("signin")
-    end
-  end
 end

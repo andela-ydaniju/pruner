@@ -4,28 +4,19 @@ class SessionsController < ApplicationController
 
   def create
     user = User.find_by(email: params[:session][:email].downcase)
-    if user && user.authenticate(password: params[:session][:password])
-      login user
+    if user && user.authenticate(params[:session][:password])
+      flash.now[:success] = "Successfully signed in"
+      sign_in user
+      remember user
       redirect_to user
     else
-      flash.now[:danger] = "No account with your email/password combination"
+      flash.now[:danger] = "Invalid email/password combination"
       render "new"
     end
   end
 
   def destroy
-  end
-
-  def signin(user)
-    cookies.permanent[:remember_token] = user.remember_token
-    self.current_user = user
-  end
-
-  def current_user
-    if @current_user.nil?
-      @current_user ||= User.find_by(id: session[:user_id])
-    else
-      @current_user
-    end
+    sign_out if signed_in?
+    redirect_to root_url
   end
 end

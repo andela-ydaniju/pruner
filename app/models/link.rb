@@ -10,12 +10,12 @@ class Link < ActiveRecord::Base
   after_create :link_shortener, :create_full_link
 
   def create_full_link
-    self.full_link = ENV["BASE_URL"] + shortened_link
+    base_url ||= ENV["BASE_URL"]
+    self.full_link = base_url + shortened_link
   end
 
   def link_shortener
-    self.shortened_link = (id.to_s +
-     (salt.to_s)).reverse.to_i.base62_encode
+    self.shortened_link = (id.to_s + (salt.to_s)).reverse.to_i.base62_encode
   end
 
   def generate_salt
