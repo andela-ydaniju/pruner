@@ -1,7 +1,7 @@
 require "rails_helper"
 describe "the signin process", :type => :feature do
   before :each do
-    User.new(:email => 'user@example.com', :password => 'password')
+    User.create(:username => "kabouli", :email => 'user@example.com', :password => 'password', :password_confirmation => 'password')
   end
 
   it "signs me in" do
@@ -11,6 +11,6 @@ describe "the signin process", :type => :feature do
       fill_in 'Password', :with => 'password'
 
     click_button 'Sign In'
-    expect(page).to have_content 'Successfully'
+    expect(page).to have_content 'Welcome'
   end
 end
