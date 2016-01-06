@@ -4,7 +4,7 @@ RSpec.describe UsersController, type: :controller do
     build(:user)
   end
   context "signup" do
-    it "render signup template" do
+    it "render signup template." do
       get :signup
       expect(response).to render_template("signup")
     end

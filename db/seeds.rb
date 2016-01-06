@@ -1,6 +1,8 @@
 User.destroy_all
 Link.destroy_all
 
+require "uri"
+
 users = User.create([
   {
     username: "Chicago",
@@ -12,5 +14,10 @@ users = User.create([
 
 20.times do
   name = Faker::Internet.url
-  users.each { |user| user.links.create!(name: name) }
+  users.each do |user|
+    link = user.links.build
+    link.name = name
+    link.user_id = user.id
+    link.save
+  end
 end

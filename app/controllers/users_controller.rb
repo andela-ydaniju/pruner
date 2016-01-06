@@ -1,5 +1,11 @@
 class UsersController < ApplicationController
+  def new
+    @user = User.new
+    redirect_to dashboard_path if signed_in?
+  end
+
   def show
+    redirect_to root_path unless current_user
     @user = User.find(params[:id])
     @links = @user.links.paginate(page: params[:page], per_page: 16)
   end
