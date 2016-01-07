@@ -37,10 +37,6 @@ class LinksController < ApplicationController
     @link = Link.find_by(shortened_link: params[:shortened_link])
   end
 
-  def full_url
-    root_url + link.shortened_link
-  end
-
   def link_params
     params.require(:link).permit(:url_input, :user_id)
   end
@@ -51,7 +47,7 @@ class LinksController < ApplicationController
   end
 
   def full_url(link)
-    root_url + link.shortened_link
+    root_url + link.shortened_link.to_s
   end
 
   def new_link?

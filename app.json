@@ -1,26 +1,25 @@
 {
   "name":"pruner",
-  "scripts":{
-    "postdeploy": "heroku run rake db:migrate"
+  "scripts": {
+  },
+  "env": {
+    "LANG": {
+      "required": true
     },
-  "env":{
-    "LANG":{
-      "required":true
+    "RACK_ENV": {
+      "required": true
     },
-    "RACK_ENV":{
-      "required":true
+    "RAILS_ENV": {
+      "required": true
     },
-    "RAILS_ENV":{
-      "required":true
+    "RAILS_SERVE_STATIC_FILES": {
+      "required": true
     },
-    "RAILS_SERVE_STATIC_FILES":{
-      "required":true
-    },
-    "SECRET_KEY_BASE":{
-      "required":true
+    "SECRET_KEY_BASE": {
+      "required": true
     }
   },
-  "addons":[
+  "addons": [
     "heroku-postgresql"
   ]
 }
