@@ -1,6 +1,5 @@
 require "rails_helper"
 describe "the link creation process", type: :feature do
-
   it "creates new link" do
     visit "/"
     within ".field" do

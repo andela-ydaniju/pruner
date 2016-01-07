@@ -17,8 +17,8 @@
 
 
 #index-banner {
-  background-color: $vivid-blue;
   background: image-url("trim_image");
+  background-color: $vivid-blue;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -299,10 +299,8 @@ textarea {
 }
 
 .link-form {
-
-  .home-link {
-    width: 30%;
-  }
+  // width: 30em;
+  padding-top: 60px;
 }
 
 .section.scrollspy.second {
