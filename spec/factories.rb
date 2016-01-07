@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :link do
-    name "MyString"
+    url_input "MyString"
     user_id 1
   end
 

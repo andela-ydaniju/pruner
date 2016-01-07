@@ -1,10 +1,5 @@
 require "rails_helper"
 describe "the link creation process", type: :feature do
-  before :each do
-    Link.create(
-      name: "www.userexample.com"
-    )
-  end
 
   it "creates new link" do
     visit "/"
@@ -13,5 +8,14 @@ describe "the link creation process", type: :feature do
     end
     click_button "Prune Me"
     expect(page).to have_content "less than a minute ago"
+  end
+
+  it "rejects bad urls" do
+    visit "/"
+    within ".field" do
+      find("input").set "user@example.com"
+    end
+    click_button "Prune Me"
+    expect(page).to have_content "Mobile Friendly"
   end
 end
