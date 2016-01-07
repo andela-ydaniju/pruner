@@ -18,9 +18,10 @@
 
 #index-banner {
   background-color: $vivid-blue;
-  background-image: image-url("trim_image");
+  background: image-url("trim_image");
   background-position: center;
   background-repeat: no-repeat;
+  background-size: cover;
   max-height: 864px;
   min-height: 632px;
   position: relative;
