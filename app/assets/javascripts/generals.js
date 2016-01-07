@@ -3,8 +3,8 @@ $(document).ready(function(){
 	$(".clip_button").click(function() {
 		clip = new ZeroClipboard($(".clip_button"));
     	Materialize.toast(
-			"Text copied to Clipboard",
-    		2000, "white black-text rounded"
+			"Link copied to Clipboard",
+    		3000, "blue white-text squared"
 		);
   	});
 });
