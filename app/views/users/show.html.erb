@@ -3,17 +3,25 @@
   <div class="row container intro user-show">
     Welcome <%= @user.username %>
   </div>
-  
-  <div class="col l3 m5 s5 user-show">
 
-  </div>
-  <div class="col l9 m7 s7 user-show">
-    <% if @user.links.any? %>
-      <h5>You have <%= @user.links.count %> pruned links</h5>
-      <ol class="links">
-        <%= render @links %>
-      </ol>
-      <%= will_paginate @links %>
-    <% end %>
+      <div class="col l3 m5 s5 user-show">
+
+      </div>
+      <div class="col l9 m7 s7 user-show">
+        <% if @user.links.any? %>
+          <h5>You have <%= @user.links.count %> pruned links</h5>
+          <% @current_user.links.each do |link| %>
+            <div class="col s12 m4 l4">
+              <div class="card">
+                <div class="card-content">
+                  <%= link.shortened_link %>
+                </div>
+              </div>
+            </div>
+          <%= will_paginate @links %>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
   </div>
 </div>
