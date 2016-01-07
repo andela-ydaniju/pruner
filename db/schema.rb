@@ -11,14 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160106163538) do
+ActiveRecord::Schema.define(version: 20160107062654) do
 
   create_table "links", force: :cascade do |t|
-    t.string   "name"
+    t.string   "url_input"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
     t.string   "shortened_link"
     t.integer  "user_id"
+    t.integer  "visits"
+    t.boolean  "enabled"
   end
 
   add_index "links", ["user_id", "created_at"], name: "index_links_on_user_id_and_created_at"

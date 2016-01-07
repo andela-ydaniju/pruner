@@ -7,10 +7,10 @@ class LinksController < ApplicationController
   def show
     link = Link.find_by_shortened_url(params[:shortened_url])
     begin
-      if link.active
-        redirect_to link.name, status: 301
-        # link.visits += 1
-        # link.save
+      if link.enabled
+        redirect_to link.url_input, status: 301
+        link.visits += 1
+        link.save
       else
         flash[:alert] = "Sorry, this link is now inactive"
         redirect_to root_path
@@ -28,7 +28,8 @@ class LinksController < ApplicationController
       link.save
       redirect_to current_user
     else
-      Link.create!(link_params)
+      link = Link.new(link_params)
+      link.save
       redirect_to root_path
     end
   end
@@ -44,11 +45,11 @@ class LinksController < ApplicationController
   end
 
   def link_params
-    params.require(:link).permit(:name, :user_id)
+    params.require(:link).permit(:url_input, :user_id)
   end
 
-  # def name
-  #   link_params[:name]
+  # def url_input
+  #   link_params[:url_input]
   # end
   #
   # def id
@@ -56,10 +57,10 @@ class LinksController < ApplicationController
   # end
   #
   # def link
-  #   Link.new(name: name, user_id: id)
+  #   Link.new(url_input: url_input, user_id: id)
   # end
 
   def new_link?
-    Link.where(name: name).where(user_id: id).blank?
+    Link.where(url_input: url_input).where(user_id: id).blank?
   end
 end
