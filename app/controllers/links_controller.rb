@@ -1,11 +1,13 @@
 class LinksController < ApplicationController
   before_action :set_link, only: [:show]
+  # before_action :logged_in_user, only: [:create, :destroy]
+  before_action :right_user,   only: :destroy
   def index
     @links = Link.all
   end
 
   def show
-    link = Link.find_by_shortened_url(params[:shortened_url])
+    link = root_url + Link.find_by_shortened_url(params[:shortened_url])
     begin
       if link.enabled
         redirect_to link.url_input, status: 301
@@ -34,6 +36,13 @@ class LinksController < ApplicationController
     end
   end
 
+  def destroy
+    @link.destroy
+    redirect_to root_path unless signed_in?
+    flash[:success] = "Link has been deleted"
+    redirect_to request.referrer || root_url
+  end
+
   private
 
   def set_link
@@ -46,6 +55,11 @@ class LinksController < ApplicationController
 
   def link_params
     params.require(:link).permit(:url_input, :user_id)
+  end
+
+  def right_user
+    @link = current_user.links.find_by(id: params[:id])
+    redirect_to root_url if @link.nil?
   end
 
   # def url_input
