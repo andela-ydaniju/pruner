@@ -7,7 +7,6 @@ module LinksHelper
     Link.where(shortened_link: vanity_string).blank?
   end
 
-# bespoke
   def link_params
     params.require(:link).permit(:url_input, :shortened_link, :user_id)
   end
@@ -58,8 +57,8 @@ module LinksHelper
   end
 
   def http_prefixer(url)
-    poor_url = url.split('www.').join
-    return poor_url unless poor_url.split(':')[1].nil?
+    poor_url = url.split("www.").join
+    return poor_url unless poor_url.split(":")[1].nil?
     "http://#{poor_url}"
   end
 end

@@ -1,5 +1,4 @@
 class LinksController < ApplicationController
-  # before_action :set_link, only: [:show]
   before_action :right_user, only: :destroy
   def index
     @links = Link.all
@@ -13,7 +12,7 @@ class LinksController < ApplicationController
       if new_link_with_vanity_string?
         vanity_url_builder
         redirect_to current_user
-      elsif
+      else
         ordinary_url_builder
       end
     else
