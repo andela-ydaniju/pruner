@@ -7,7 +7,7 @@ class UsersController < ApplicationController
   def show
     redirect_to root_path unless current_user
     @user = User.find(params[:id])
-    @links = @user.links.paginate(page: params[:page], per_page: 16)
+    @links = @user.links.paginate(page: params[:page], per_page: 12)
   end
 
   def signup

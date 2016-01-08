@@ -5,6 +5,6 @@ Rails.application.routes.draw do
   get "signin", to: "sessions#new", as: "signin"
   delete "signout", to: "sessions#destroy", as: "signout"
   resources :users
-  resources :links
+  resources :links, only: [:create, :destroy]
   resources :generals
 end
