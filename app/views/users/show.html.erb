@@ -22,10 +22,12 @@
             </ul>
           </div>
         <% end %>
-        <div class="field">
+        <div class="field1">
           <%= f.text_field :url_input, pattern: "(https?://)?([a-z0-9]+\\.)?[a-z0-9\\-]+\\.[a-z]+.+[^\\W\\_]", placeholder: "Paste a link to prune", class: "validate", required: true %>
         </div>
-        <%= f.text_field :shortened_link, placeholder: "Add a vanity string", class: "validate", value: "", required: false %>
+        <div class="field2">
+          <%= f.text_field :shortened_link, placeholder: "Add a vanity string", class: "validate", value: "", required: false %>
+        </div>
         <div class="actions">
           <%= f.button "Prune Me", class: "btn btn-primary"%>
         </div>

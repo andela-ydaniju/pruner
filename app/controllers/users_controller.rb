@@ -6,9 +6,8 @@ class UsersController < ApplicationController
 
   def show
     @link = signed_in? ? current_user.links.build : Link.new
-    redirect_to root_path unless current_user
     @user = current_user
-    @links = @user.links.paginate(page: params[:page], per_page: 12)
+    @links = @user.links
   end
 
   def signup
