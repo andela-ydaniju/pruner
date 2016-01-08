@@ -1,0 +1,32 @@
+<div id="loader-wrapper">
+    <div id="loader"></div>
+
+    <div class="loader-section section-left"></div>
+    <div class="loader-section section-right"></div>
+
+</div>
+
+<!--Navigation-->
+ <div class="navbar-fixed">
+    <nav id="nav-f" class="default-color" role="navigation">
+        <div class="container">
+            <div class="nav-wrapper">
+              <%= link_to "Pruner", "/", id: "logo-container", class: "brand-logo" %>
+                <ul class="right hide-on-med-and-down">
+                    <li><%= link_to "Services", "#intro" %></li>
+                    <li><%= link_to "Sign In", signin_path %></li>
+                    <li><%= link_to "Sign Up", signup_path %></li>
+                </ul>
+                <ul id="nav-mobile" class="side-nav">
+                  <li><%= link_to "Services", "#intro" %></li>
+                  <li><%= link_to "Sign In", signin_path %></li>
+                  <li><%= link_to "Sign Up", signup_path %></li></li>
+                </ul>
+            <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+            </div>
+        </div>
+    </nav>
+</div>
+<% flash.each do |message_type, message| %>
+  <div class="center alert alert-<%= message_type %>"><%= message %></div>
+<% end %>
