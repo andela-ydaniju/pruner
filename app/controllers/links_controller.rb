@@ -1,5 +1,5 @@
 class LinksController < ApplicationController
-  before_action :set_link, only: [:show]
+  # before_action :set_link, only: [:show]
   # before_action :logged_in_user, only: [:create, :destroy]
   before_action :right_user, only: :destroy
   def index
@@ -27,15 +27,15 @@ class LinksController < ApplicationController
   def destroy
     @link.destroy
     redirect_to root_path unless signed_in?
-    flash[:success] = "Link has been deleted"
+    flash[:success] = "Link destroyed"
     redirect_to request.referrer || root_url
   end
 
   private
 
-  def set_link
-    @link = Link.find_by(shortened_link: params[:shortened_link])
-  end
+  # def set_link
+  #   @link = Link.find_by(shortened_link: params[:shortened_link])
+  # end
 
   def link_params
     params.require(:link).permit(:url_input, :user_id)

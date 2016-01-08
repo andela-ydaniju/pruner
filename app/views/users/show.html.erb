@@ -1,13 +1,40 @@
 <%= provide(:title, "Dashboard") %>
-<div class="row user-show">
-  <div class="row container intro user-show">
-    Welcome <%= @user.username %>
+<div class="row container intro user-show">
+  Welcome <%= @user.username %>
+</div>
+<div class="section no-pad-bot" id="index-banner">
+  <div class="container center">
+    <h1 class="text_h center header cd-headline letters type">
+      Get a nice trim link
+    </h1>
+    <div class="link-form center">
+      <%= form_for @link do |f| %>
+        <% if @link.errors.any? %>
+          <%= f.hidden_field :user_id %>
+          <div id="error_explanation">
+            <h2><%= pluralize(@link.errors.count, "error") %> prohibited this link from being saved:</h2>
+
+            <ul>
+            <% @link.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
+            <% end %>
+            </ul>
+          </div>
+        <% end %>
+        <div class="field">
+          <%= f.text_field :url_input, pattern: "(https?://)?([a-z0-9]+\\.)?[a-z0-9\\-]+\\.[a-z]+.+[^\\W\\_]", placeholder: "Paste a link to prune", class: "validate", required: true %>
+        </div>
+        <div class="actions">
+          <%= f.button "Prune Me", class: "btn btn-primary"%>
+        </div>
+      <% end %>
+        <%= render "partials/clipboard" if flash[:link]%>
+    </div>
   </div>
+</div>
 
-      <div class="col l3 m5 s5 user-show">
-
-      </div>
-      <div class="col l9 m7 s7 user-show">
+<div class="row user-show">
+      <div class="col l12 m7 s7 user-show center">
         <% if @user.links.any? %>
           <h5>You have <%= @user.links.count %> pruned links</h5>
           <% @current_user.links.each do |link| %>
