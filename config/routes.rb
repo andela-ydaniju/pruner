@@ -4,7 +4,9 @@ Rails.application.routes.draw do
   get "signup", to: "users#signup", as: "signup"
   get "signin", to: "sessions#new", as: "signin"
   delete "signout", to: "sessions#destroy", as: "signout"
+  get "dashboard", to: "users#show", as: "dashboard"
   resources :users
   resources :links, only: [:create, :destroy]
   resources :generals
+  get "/:path" => "links#redirector"
 end

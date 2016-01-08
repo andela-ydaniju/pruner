@@ -1,6 +1,5 @@
-<!-- <h1>Sessions#new</h1>
-<p>Find me in app/views/sessions/new.html.erb</p> -->
 <%= provide(:title, "Sign In") %>
+<%= render "partials/header2" %>
 <div class="row container signin-box center-align">
     <div class = "col l5 m8 s12 signin">
         <%= form_for :session, url: sessions_path, html: { class: "signin card-panel" } do |f| %>

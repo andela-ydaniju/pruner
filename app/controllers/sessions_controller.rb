@@ -8,7 +8,8 @@ class SessionsController < ApplicationController
       flash.now[:success] = "Successfully signed in"
       sign_in user
       remember user
-      redirect_to user
+      session[:id] = user.id
+      redirect_to dashboard_path
     else
       flash.now[:danger] = "Invalid email/password combination"
       render "new"
