@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   resources :users
   resources :links, only: [:create, :destroy]
   resources :generals
+  get "/:path" => "links#redirector"
 end

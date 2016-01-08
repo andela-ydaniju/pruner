@@ -1,6 +1,5 @@
 class LinksController < ApplicationController
   # before_action :set_link, only: [:show]
-  # before_action :logged_in_user, only: [:create, :destroy]
   before_action :right_user, only: :destroy
   def index
     @links = Link.all
@@ -27,5 +26,10 @@ class LinksController < ApplicationController
     redirect_to root_path unless signed_in?
     flash[:success] = "Link destroyed"
     redirect_to request.referrer || root_url
+  end
+
+  def redirector
+    @link = Link.find_by_shortened_link(params[:path])
+    redirect_to @link.url_input, status: 301
   end
 end
