@@ -11,16 +11,14 @@ class LinksController < ApplicationController
 
   def create
     if signed_in?
-      @link = Link.new(link_params)
-      @link.user_id = current_user.id
-      @link.save
-      redirect_to current_user
+      if new_link_with_vanity_string?
+        vanity_url_builder
+        redirect_to current_user
+      elsif
+        ordinary_url_builder
+      end
     else
-      @link = Link.new(link_params)
-      @link.save
-      flash[:link] = full_url(@link)
-      flash[:success] = "Link successfully created #{flash[:link]}"
-      redirect_to root_path
+      ordinary_url_builder
     end
   end
 
@@ -29,28 +27,5 @@ class LinksController < ApplicationController
     redirect_to root_path unless signed_in?
     flash[:success] = "Link destroyed"
     redirect_to request.referrer || root_url
-  end
-
-  private
-
-  # def set_link
-  #   @link = Link.find_by(shortened_link: params[:shortened_link])
-  # end
-
-  def link_params
-    params.require(:link).permit(:url_input, :user_id)
-  end
-
-  def right_user
-    @link = current_user.links.find_by(id: params[:id])
-    redirect_to root_url if @link.nil?
-  end
-
-  def full_url(link)
-    root_url + link.shortened_link.to_s
-  end
-
-  def new_link?
-    Link.where(url_input: url_input).where(user_id: id).blank?
   end
 end
