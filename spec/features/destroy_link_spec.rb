@@ -22,5 +22,4 @@ describe "the link deletion process", type: :feature do
     first(".card").click_link "delete"
     expect(page).to have_content "You have 0 pruned links"
   end
-
 end

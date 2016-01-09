@@ -307,6 +307,6 @@ textarea {
   background-color: $body-background !important;
 }
 
-.pagination a li.active {
-  color: #fff;
+.pagination a .active {
+  color: $full-white;
 }

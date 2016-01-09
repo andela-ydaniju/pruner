@@ -42,5 +42,4 @@ describe "the link creation process", type: :feature do
     click_button "Prune Me"
     expect(page).to have_content "mmm"
   end
-
 end
