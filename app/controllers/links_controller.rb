@@ -27,6 +27,10 @@ class LinksController < ApplicationController
     redirect_to request.referrer || root_url
   end
 
+  def edit
+    @link = Link.new
+  end
+
   def redirector
     @link = Link.find_by_shortened_link(params[:path])
     redirect_to @link.url_input, status: 301

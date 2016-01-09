@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   delete "signout", to: "sessions#destroy", as: "signout"
   get "dashboard", to: "users#show", as: "dashboard"
   resources :users
-  resources :links, only: [:create, :destroy]
+  resources :links, only: [:create, :destroy, :edit]
   resources :generals
   get "/:path" => "links#redirector"
 end
