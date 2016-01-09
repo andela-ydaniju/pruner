@@ -78,8 +78,8 @@
                     </div>
                     <div class="card-reveal">
                         <span class="card-title grey-text text-darken-4"><i class="mdi-navigation-close right"></i></span>
-                        <p>Created by:</p>
-                        <p>Time:</p>
+                        <p>Created by: <%= link.user.username if link.user%></p>
+                        <p>Time: <%= link.created_at %></p>
                         <p>Number of clicks: <%= link.visits %></p>
                     </div>
                 </div>
@@ -104,7 +104,9 @@
                     </div>
                     <div class="card-reveal">
                         <span class="card-title grey-text text-darken-4"><i class="mdi-navigation-close right"></i></span>
-                        <p>Here is some more information about this project that is only revealed once clicked on.</p>
+                        <p>Created by: <%= link.user.username if link.user%></p>
+                        <p>Time: <%= link.created_at %></p>
+                        <p>Number of clicks: <%= link.visits %></p>
                     </div>
                 </div>
             </div>
