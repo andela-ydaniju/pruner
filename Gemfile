@@ -17,6 +17,7 @@ gem "sdoc", "~> 0.4.0", group: :doc
 gem "coveralls", require: false
 gem "bcrypt", "~> 3.1.7"
 gem "zeroclipboard-rails"
+gem "will_paginate-materialize"
 # Use Unicorn as the app server
 # gem 'unicorn'
 

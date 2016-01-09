@@ -306,3 +306,7 @@ textarea {
 .section.scrollspy.second {
   background-color: $body-background !important;
 }
+
+.pagination a .active {
+  color: $full-white;
+}
