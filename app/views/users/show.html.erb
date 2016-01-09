@@ -41,9 +41,11 @@
   <div class="col l12 m7 s7 user-show center">
     <% if @user.links.any? %>
       <h5>You have <%= pluralize(@user.links.count, "pruned link") %></h5>
-      <% @user.links.each do |link| %>
-        <%= render link %>
-      <% end %>
+      <ul>
+        <% @user.links.each do |link| %>
+          <li><%= render link %></li>
+        <% end %>
+      </ul>
     <% end %>
   </div>
 </div>
