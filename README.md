@@ -1,6 +1,6 @@
 # Pruner
 
-[![Code Climate](https://codeclimate.com/github/andela-ydaniju/pruner/badges/gpa.svg)](https://codeclimate.com/github/andela-ydaniju/pruner) [![Circle CI](https://circleci.com/gh/andela-ydaniju/pruner.svg?style=svg)](https://circleci.com/gh/andela-ydaniju/pruner) [![Coverage Status](https://coveralls.io/repos/andela-ydaniju/pruner/badge.svg?branch=master&service=github)](https://coveralls.io/github/andela-ydaniju/pruner?branch=master)
+[![Code Climate](https://codeclimate.com/github/andela-ydaniju/prun.er/badges/gpa.svg)](https://codeclimate.com/github/andela-ydaniju/prun.er) [![Circle CI](https://circleci.com/gh/andela-ydaniju/prun.er.svg?style=svg)](https://circleci.com/gh/andela-ydaniju/prun.er) [![Coverage Status](https://coveralls.io/repos/andela-ydaniju/prun.er/badge.svg?branch=master&service=github)](https://coveralls.io/github/andela-ydaniju/prun.er?branch=master)
 
 ## Installation
 Web application is written with Ruby using the Ruby on Rails framework.
