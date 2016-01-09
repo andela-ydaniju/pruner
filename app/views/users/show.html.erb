@@ -36,22 +36,15 @@
     </div>
   </div>
 </div>
-
+<%= will_paginate @links%>
 <div class="row user-show">
   <div class="col l12 m7 s7 user-show center">
     <% if @user.links.any? %>
-      <h5>You have <%= @user.links.count %> pruned links</h5>
-      <% @current_user.links.each do |link| %>
-        <div class="col s12 m4 l4">
-          <div class="card">
-            <div class="card-content">
-              <%= link_to (root_url + link.shortened_link.to_s), link.shortened_link %>
-              <%= link_to "delete", link, method: :delete, data:
-              { confirm: "Do you want to delete this link?" } %>
-            </div>
-          </div>
-        </div>
+      <h5>You have <%= pluralize(@user.links.count, "pruned link") %></h5>
+      <% @user.links.each do |link| %>
+        <%= render link %>
       <% end %>
     <% end %>
   </div>
 </div>
+<%= will_paginate @links %>

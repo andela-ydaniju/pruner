@@ -1,15 +1,15 @@
 class UsersController < ApplicationController
-  # def new
-  #   @user = User.new
-  #   redirect_to dashboard_path if signed_in?
-  # end
+  def new
+    @user = User.new
+    redirect_to dashboard_path if signed_in?
+  end
 
   def show
     @link = signed_in? ? current_user.links.build : Link.new
     if current_user
       @user = current_user
     end
-    @links = @user.links
+    @links = @user.links.paginate(page: params[:page], per_page: 12)
   end
 
   def signup
