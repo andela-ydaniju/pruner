@@ -584,7 +584,6 @@
         1,
         1,
         null,
-        null,
         null
       ],
       "C:/Users/ADEDIRAN/pruner/spec/features/new_link_spec.rb": [
@@ -631,7 +630,6 @@
         null,
         1,
         1,
-        null,
         null,
         null
       ],
@@ -953,6 +951,6 @@
         null
       ]
     },
-    "timestamp": 1452329729
+    "timestamp": 1452336899
   }
 }
