@@ -1,8 +1,9 @@
 <div class="col s12 m4 l4">
   <div class="card">
     <div class="card-content">
+      <h5><%= link.url_input %></h5>
       <%= link_to (root_url + link.shortened_link.to_s), link.url_input %>
-      <p><%= link_to "Edit", edit_link_path %> <%= link_to "Delete", link, method: :delete, data:
+      <p><%= link_to "Edit", link_update_path %> <%= link_to "Delete", link, method: :delete, data:
       { confirm: "Do you want to delete this link?" } %> </p>
     </div>
   </div>

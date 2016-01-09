@@ -28,7 +28,7 @@ class LinksController < ApplicationController
   end
 
   def edit
-    @link = Link.new
+    # @link = Link.new
   end
 
   def redirector

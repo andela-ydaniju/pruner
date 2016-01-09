@@ -1,7 +1,13 @@
-<%= form_for (@link) do |f| %>
-  <%= f.label :url_input %>
-  <%= f.label :url_input %>
+<div class="l6 m6 s12">
+  <h4>Link Information</h4>
+</div>
 
-  <%= f.label :enabled %>
-  <%= f.check_box :enabled %>
-<% end %>
+<div class="l6 m6 s12">
+  <%= form_for @link, url: { method: :patch, action: :update } do |f| %>
+    <%= f.label :url_input %>
+    <%= f.input :url_input %>
+
+    <%= f.label :enabled %>
+    <%= f.check_box :enabled %>
+  <% end %>
+</div>
