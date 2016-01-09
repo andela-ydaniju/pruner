@@ -286,8 +286,13 @@ textarea {
   }
 }
 
-.card .card-content p {
-  margin: 15px 0;
+.card {
+  height: 15em;
+  overflow: hidden;
+
+  .card-content p {
+    margin: 15px 0;
+  }
 }
 
 .parallax-container {
@@ -309,9 +314,4 @@ textarea {
 
 .pagination a .active {
   color: $full-white;
-}
-
-.card {
-  overflow: hidden;
-  height: 15em;
 }

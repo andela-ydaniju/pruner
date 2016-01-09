@@ -19,7 +19,7 @@ describe "the link deletion process", type: :feature do
       find("input").set "www.userexample.com"
     end
     click_button "Prune Me"
-    first(".card").click_link "delete"
+    first(".card").click_link "Delete"
     expect(page).to have_content "You have 0 pruned links"
   end
 end
