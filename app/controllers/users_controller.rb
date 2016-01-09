@@ -1,12 +1,14 @@
 class UsersController < ApplicationController
-  def new
-    @user = User.new
-    redirect_to dashboard_path if signed_in?
-  end
+  # def new
+  #   @user = User.new
+  #   redirect_to dashboard_path if signed_in?
+  # end
 
   def show
     @link = signed_in? ? current_user.links.build : Link.new
-    @user = current_user
+    if current_user
+      @user = current_user
+    end
     @links = @user.links
   end
 
