@@ -30,5 +30,11 @@ class LinksController < ApplicationController
   def redirector
     @link = Link.find_by_shortened_link(params[:path])
     redirect_to @link.url_input, status: 301
+    if @link.enabled
+      @link.visits += 1
+      @link.save
+    else
+      flash[:error] = "Link has been disabled"
+    end
   end
 end
