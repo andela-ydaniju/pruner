@@ -38,25 +38,15 @@ module LinksHelper
   end
 
   def ordinary_url_builder
-    if signed_in?
-      @link = Link.new(link_params)
-      @link.user_id = current_user.id
-      @link.url_input = http_prefixer(@link.url_input)
-      if @link.save
-        link_success_flash
-      else
-        link_failure_flash
-      end
+    @link = Link.new(link_params)
+    @link.url_input = http_prefixer(@link.url_input)
+    @link.user_id = current_user.id if signed_in?
+    if @link.save
+      link_success_flash
     else
-      @link = Link.new(link_params)
-      @link.url_input = http_prefixer(@link.url_input)
-      if @link.save
-        link_success_flash
-      else
-        link_failure_flash
-      end
-      redirect_to root_path
+      link_failure_flash
     end
+    redirect_to root_path unless current_user
   end
 
   def link_failure_flash
