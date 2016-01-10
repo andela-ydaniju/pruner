@@ -22,7 +22,7 @@ class LinksController < ApplicationController
   def destroy
     @link.destroy
     redirect_to root_path unless signed_in?
-    flash[:success] = "Link destroyed"
+    flash[:success] = "Link successfully destroyed"
     redirect_to request.referrer || root_url
   end
 
