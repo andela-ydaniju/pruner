@@ -1,5 +1,5 @@
 class Link < ActiveRecord::Base
-  URL_REGEX = %r{\A(https?:\/\/)?([a-z0-9]+\.)?[a-z0-9\-]+\.[a-z]+.+[^\W\_]\z}
+  URL_REGEX = %r{\A(https?:\/\/)?([a-z0-9]+\.)?[a-z0-9\-]+\.[a-z]+\z}
 
   belongs_to :user
   # default_scope { order(created_at: :desc) }
