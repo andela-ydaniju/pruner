@@ -20,6 +20,6 @@ describe "the link deletion process", type: :feature do
     end
     click_button "Prune Me"
     first(".card").click_link "Delete"
-    expect(page).to have_content "You have 0 pruned links"
+    expect(page).to have_content "Link successfully destroyed"
   end
 end
