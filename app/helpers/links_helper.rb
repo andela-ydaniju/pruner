@@ -47,7 +47,6 @@ module LinksHelper
       else
         link_failure_flash
       end
-      redirect_to current_user
     else
       @link = Link.new(link_params)
       @link.url_input = http_prefixer(@link.url_input)

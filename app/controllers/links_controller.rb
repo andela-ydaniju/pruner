@@ -10,13 +10,12 @@ class LinksController < ApplicationController
     if signed_in?
       if new_link_with_vanity_string?
         vanity_url_builder
-        redirect_to current_user
       else
         ordinary_url_builder
       end
-    else
-      ordinary_url_builder
+      redirect_to current_user
     end
+    ordinary_url_builder
   end
 
   def destroy
