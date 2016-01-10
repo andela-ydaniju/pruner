@@ -14,8 +14,9 @@ class LinksController < ApplicationController
         ordinary_url_builder
       end
       redirect_to current_user
+    else
+      ordinary_url_builder
     end
-    ordinary_url_builder
   end
 
   def destroy
@@ -26,18 +27,14 @@ class LinksController < ApplicationController
   end
 
   def edit
-    @link = Link.new
-    @link_details = Link.where(user_id: params[:id]).where(user_id:
-     current_user.id).first
+    @link = Link.find(params[:id])
   end
 
   def update
     updated_params = params.require(:link).permit(:url_input, :enabled)
     target_url = http_prefixer(updated_params[:url_input])
     status = bool_check(updated_params[:enabled])
-
-    current_link = Link.find_by(params[:id])
-
+    current_link = Link.find(params[:id])
     if target_url == current_link.url_input && status == current_link.enabled
       flash[:alert] = "No changes made"
       redirect_to edit_path

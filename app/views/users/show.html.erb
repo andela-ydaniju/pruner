@@ -37,10 +37,10 @@
 <%= will_paginate @links%>
 <div class="row user-show">
   <div class="col l12 m7 s7 user-show center">
-    <% if @user.links.any? %>
-      <h5>You have <%= pluralize(@user.links.count, "pruned link") %></h5>
+    <% if @links.any? %>
+      <h5>You have <%= pluralize(@links.count, "pruned link") %></h5>
       <ul>
-        <% @user.links.each do |link| %>
+        <% @links.each do |link| %>
           <li><%= render link %></li>
         <% end %>
       </ul>

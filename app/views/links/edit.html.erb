@@ -5,13 +5,13 @@
     <h3>Manage this Short Link</h3>
     <%= form_for @link, url: { method: :patch, action: :update } do |f| %>
       <%= f.label :url_input, "Update Url" %>
-      <%= f.text_field :url_input, placeholder: "Enter new Url", pattern: "(https?://)?([a-z0-9]+\\.)?[a-z0-9\\-]+\\.[a-z]+.+[^\\W\\_]", value: @link_details.url_input, required: true %>
+      <%= f.text_field "url_input", placeholder: "Enter new Url", pattern: "(https?://)?([a-z0-9]+\\.)?[a-z0-9\\-]+\\.[a-z]+.+[^\\W\\_]", value: @link.url_input, required: true %>
       <p class="status-wrapper">
-        <%= f.radio_button :enabled, true, id: "true_status", checked: @link_details.enabled %>
+        <%= f.radio_button :enabled, true, id: "true_status", checked: @link.enabled %>
         <%= f.label :enabled, "enabled", for: "true_status" %>
       </p>
       <p class="status-wrapper">
-        <%= f.radio_button :enabled, false, id: "false_status", checked: !(@link_details.enabled)%>
+        <%= f.radio_button :enabled, false, id: "false_status", checked: !(@link.enabled)%>
         <%= f.label :enabled, "disabled", for: "false_status" %>
       </p>
       <%= f.button raw("<i class='material-icons right'>send</i>Save"), class: "gradient-btn btn waves-effect waves-light" %>
