@@ -5,9 +5,10 @@ Rails.application.routes.draw do
   get "signin", to: "sessions#new", as: "signin"
   delete "signout", to: "sessions#destroy", as: "signout"
   get "dashboard", to: "users#show", as: "dashboard"
-  get "edit", to: "links#edit", as: "link_update"
   resources :users
-  resources :links, only: [:create, :destroy, :edit]
+  get "links/:id" => "links#edit", as: "edit"
+  post "links/:id" => "links#update"
+  resources :links, only: [:create, :destroy, :update]
   resources :generals
   get "/:path" => "links#redirector"
 end

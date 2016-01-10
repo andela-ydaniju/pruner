@@ -1,13 +1,24 @@
-<div class="l6 m6 s12">
-  <h4>Link Information</h4>
-</div>
+<div class="container">
 
-<div class="l6 m6 s12">
-  <%= form_for @link, url: { method: :patch, action: :update } do |f| %>
-    <%= f.label :url_input %>
-    <%= f.input :url_input %>
 
-    <%= f.label :enabled %>
-    <%= f.check_box :enabled %>
-  <% end %>
+  <div class="col s12 m6 l6">
+    <h3>Manage this Short Link</h3>
+    <%= form_for @link, url: { method: :patch, action: :update } do |f| %>
+      <%= f.label :url_input, "Update Url" %>
+      <%= f.text_field :url_input, placeholder: "Enter new Url", pattern: "(https?://)?([a-z0-9]+\\.)?[a-z0-9\\-]+\\.[a-z]+.+[^\\W\\_]", value: @link_details.url_input, required: true %>
+      <p class="status-wrapper">
+        <%= f.radio_button :enabled, true, id: "true_status", checked: @link_details.enabled %>
+        <%= f.label :enabled, "enabled", for: "true_status" %>
+      </p>
+      <p class="status-wrapper">
+        <%= f.radio_button :enabled, false, id: "false_status", checked: !(@link_details.enabled)%>
+        <%= f.label :enabled, "disabled", for: "false_status" %>
+      </p>
+      <%= f.button raw("<i class='material-icons right'>send</i>Save"), class: "gradient-btn btn waves-effect waves-light" %>
+    <% end %>
+  </div>
+
+  <div class="col s12 m6 l6">
+    <h4>Link Details</h4>
+  </div>
 </div>

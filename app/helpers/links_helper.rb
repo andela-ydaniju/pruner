@@ -1,4 +1,7 @@
 module LinksHelper
+  def bool_check(stringy_bool)
+    stringy_bool === "true" ? true : false
+  end
   def vanity_string
     link_params[:shortened_link]
   end

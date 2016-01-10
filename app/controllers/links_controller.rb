@@ -1,10 +1,10 @@
 class LinksController < ApplicationController
   before_action :right_user, only: :destroy
   def index
-    @links = Link.all
   end
 
   def show
+    link = Link.find_by_user_id(params[:user_id])
   end
 
   def create
@@ -28,7 +28,25 @@ class LinksController < ApplicationController
   end
 
   def edit
-    # @link = Link.new
+    @link = Link.new
+    @link_details = Link.where(user_id: params[:id]).where(user_id: current_user.id).first
+  end
+
+  def update
+    updated_params = params.require(:link).permit(:url_input, :enabled)
+    target_url = http_prefixer(updated_params[:url_input])
+    status = bool_check(updated_params[:enabled])
+
+    current_link = Link.find_by(params[:id])
+
+    if target_url == current_link.url_input && status == current_link.enabled
+      flash[:alert] = "No changes made"
+      redirect_to edit_path
+    else
+      current_link.update_attributes(url_input: target_url, enabled: status)
+      flash[:alert] = "Link updated"
+      redirect_to current_user
+    end
   end
 
   def redirector

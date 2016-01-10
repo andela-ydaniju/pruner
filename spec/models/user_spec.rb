@@ -43,18 +43,4 @@ RSpec.describe User, type: :model do
       expect(user.valid?).to be false
     end
   end
-
-  # context "when destroyed" do
-  #   new_user = User.new(
-  #     username: "Example User",
-  #     email: "user@example.com",
-  #     password: "foobarbaz",
-  #     password_confirmation: "foobarbaz"
-  #   )
-  #   it "has its associated links destroyed, too" do
-  #     new_user.save
-  #     new_user.links.create!(name: "www.goal.com")
-  #     expect { new_user.destroy }.to change { Link.count }.by(-1)
-  #   end
-  # end
 end

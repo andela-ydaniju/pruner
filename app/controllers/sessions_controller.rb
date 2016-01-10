@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
       sign_in user
       remember user
       session[:id] = user.id
-      redirect_to dashboard_path
+      redirect_to current_user
     else
       flash.now[:danger] = "Invalid email/password combination"
       render "new"
