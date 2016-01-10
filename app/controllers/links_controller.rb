@@ -4,7 +4,6 @@ class LinksController < ApplicationController
   end
 
   def show
-    link = Link.find_by_user_id(params[:user_id])
   end
 
   def create

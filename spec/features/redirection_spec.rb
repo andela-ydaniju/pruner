@@ -7,6 +7,6 @@ describe "the redirction process" do
     end
     click_button "Prune Me"
     find("#act").click
-    expect(page).to have_content "An Illustrated Book of Bad Arguments"
+    expect(page).to have_content "almossawi"
   end
 end

@@ -10,10 +10,6 @@ module LinksHelper
     Link.where(shortened_link: vanity_string).blank?
   end
 
-  def link_params
-    params.require(:link).permit(:url_input, :shortened_link, :user_id)
-  end
-
   def right_user
     @link = current_user.links.find_by(id: params[:id])
     redirect_to root_url if @link.nil?
@@ -32,8 +28,11 @@ module LinksHelper
     @link.user_id = current_user.id
     @link.url_input = http_prefixer(@link.url_input)
     if @link.save
-      @link.update_attribute(:shortened_link, vanity_string)
-      link_success_flash
+      if @link.update_attribute(:shortened_link, vanity_string)
+        link_success_flash
+      else
+        link_failure_flash
+      end
     end
   end
 
@@ -42,16 +41,26 @@ module LinksHelper
       @link = Link.new(link_params)
       @link.user_id = current_user.id
       @link.url_input = http_prefixer(@link.url_input)
-      @link.save
-      link_success_flash
+      if @link.save
+        link_success_flash
+      else
+        link_failure_flash
+      end
       redirect_to current_user
     else
       @link = Link.new(link_params)
       @link.url_input = http_prefixer(@link.url_input)
-      @link.save
-      link_success_flash
-      redirect_to root_path
+      if @link.save
+        link_success_flash
+      else
+        link_failure_flash
+      end
+        redirect_to root_path
     end
+  end
+
+  def link_failure_flash
+    flash[:error] = "An error occurred in creating link, please try again"
   end
 
   def link_success_flash
@@ -63,5 +72,9 @@ module LinksHelper
     poor_url = url.split("www.").join
     return poor_url unless poor_url.split(":")[1].nil?
     "http://#{poor_url}"
+  end
+
+  def link_params
+    params.require(:link).permit(:url_input, :shortened_link, :user_id)
   end
 end

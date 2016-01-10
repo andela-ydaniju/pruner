@@ -281,6 +281,7 @@
         1,
         1,
         1,
+        1,
         null
       ],
       "C:/Users/ADEDIRAN/pruner/app/helpers/application_helper.rb": [
@@ -301,6 +302,9 @@
       ],
       "C:/Users/ADEDIRAN/pruner/app/helpers/links_helper.rb": [
         1,
+        1,
+        0,
+        null,
         1,
         4,
         null,
@@ -378,8 +382,8 @@
         null,
         null,
         1,
-        98,
-        42,
+        102,
+        46,
         56,
         0,
         0,
@@ -435,7 +439,6 @@
         1,
         1,
         1,
-        0,
         null,
         null,
         1,
@@ -462,6 +465,24 @@
         null,
         null,
         1,
+        0,
+        0,
+        null,
+        null,
+        1,
+        0,
+        0,
+        0,
+        null,
+        0,
+        null,
+        0,
+        0,
+        0,
+        null,
+        0,
+        0,
+        0,
         null,
         null,
         null,
@@ -963,6 +984,6 @@
         null
       ]
     },
-    "timestamp": 1452370858
+    "timestamp": 1452426157
   }
 }
