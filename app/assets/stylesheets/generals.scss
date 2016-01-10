@@ -315,3 +315,26 @@ textarea {
 .pagination a .active {
   color: $full-white;
 }
+
+.center.alert {
+  &.alert-success {
+    background-color: $light-green;
+    color: $dark-green;
+    height: 3em;
+    padding-top: 1em;
+  }
+
+  &.alert-alert {
+    background-color: $light-yellow;
+    color: $dark-yellow;
+    height: 3em;
+    padding-top: 1em;
+  }
+
+  &.alert-error {
+    background-color: $light-pink;
+    color: $dark-pink;
+    height: 3em;
+    padding-top: 1em;
+  }
+}

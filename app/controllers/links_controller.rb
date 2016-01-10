@@ -28,7 +28,8 @@ class LinksController < ApplicationController
 
   def edit
     @link = Link.new
-    @link_details = Link.where(user_id: params[:id]).where(user_id: current_user.id).first
+    @link_details = Link.where(user_id: params[:id]).where(user_id:
+     current_user.id).first
   end
 
   def update

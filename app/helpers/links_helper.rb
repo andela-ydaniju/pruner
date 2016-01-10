@@ -1,7 +1,8 @@
 module LinksHelper
   def bool_check(stringy_bool)
-    stringy_bool === "true" ? true : false
+    stringy_bool == "true" ? true : false
   end
+
   def vanity_string
     link_params[:shortened_link]
   end
@@ -55,7 +56,7 @@ module LinksHelper
       else
         link_failure_flash
       end
-        redirect_to root_path
+      redirect_to root_path
     end
   end
 
