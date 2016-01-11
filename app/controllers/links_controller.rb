@@ -46,6 +46,8 @@ class LinksController < ApplicationController
   end
 
   def redirector
+    return if erased_link?
+
     @link = Link.find_by_shortened_link(params[:path])
     redirect_to @link.url_input, status: 301
     if @link.enabled
@@ -55,4 +57,11 @@ class LinksController < ApplicationController
       flash[:error] = "Link has been disabled"
     end
   end
+end
+
+private
+
+def erased_link?
+  flash[:error] = "Link must have been destroyed"
+  redirect_to root_path
 end

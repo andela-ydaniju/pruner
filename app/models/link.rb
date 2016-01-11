@@ -11,7 +11,7 @@ class Link < ActiveRecord::Base
 
   validates :url_input, format: { with: URL_REGEX }
 
-  after_initialize :init_visits, :init_enabled, :init_destroyed
+  after_initialize :init_visits, :init_enabled, :init_erased
 
   def init_visits
     self.visits ||= 0
@@ -21,8 +21,8 @@ class Link < ActiveRecord::Base
     self.enabled ||= true
   end
 
-  def init_destroyed
-    self.destroyed ||= false
+  def init_erased
+    self.erased ||= false
   end
 
   def link_shortener
