@@ -37,7 +37,7 @@ class LinksController < ApplicationController
     current_link = Link.find(params[:id])
     if target_url == current_link.url_input && status == current_link.enabled
       flash[:alert] = "No changes made"
-      redirect_to edit_path
+      redirect_to current_user
     else
       current_link.update_attributes(url_input: target_url, enabled: status)
       flash[:success] = "Link updated"
@@ -48,15 +48,21 @@ class LinksController < ApplicationController
   def redirector
     begin
       @link = Link.find_by_shortened_link(params[:path])
-      raise NoMethodError if nil
+      return disabled_action unless @link.enabled
       redirect_to @link.url_input, status: 301
-      if @link.enabled
-        @link.visits += 1
-        @link.save
-      end
-    rescue
+      @link.visits += 1
+      @link.save
+
+    rescue NoMethodError
       flash[:error] = "Link must have been destroyed"
       redirect_to root_path
     end
   end
+end
+
+private
+
+def disabled_action
+  flash[:error] = "Link is disabled"
+  redirect_to root_path
 end
