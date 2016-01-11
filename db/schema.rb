@@ -11,16 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160111005342) do
+ActiveRecord::Schema.define(version: 20160111082451) do
 
   create_table "links", force: :cascade do |t|
     t.string   "url_input"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
     t.string   "shortened_link"
     t.integer  "user_id"
     t.integer  "visits"
-    t.boolean  "enabled"
+    t.boolean  "enabled",        default: true
     t.boolean  "erased"
   end
 
