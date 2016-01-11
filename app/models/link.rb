@@ -17,10 +17,6 @@ class Link < ActiveRecord::Base
     self.visits ||= 0
   end
 
-  def init_erased
-    self.erased ||= false
-  end
-
   def link_shortener
     self.shortened_link = SecureRandom.urlsafe_base64(5)
   end
