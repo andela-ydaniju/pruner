@@ -40,7 +40,7 @@ class LinksController < ApplicationController
       redirect_to edit_path
     else
       current_link.update_attributes(url_input: target_url, enabled: status)
-      flash[:alert] = "Link updated"
+      flash[:success] = "Link updated"
       redirect_to current_user
     end
   end
@@ -59,14 +59,4 @@ class LinksController < ApplicationController
       redirect_to root_path
     end
   end
-end
-
-private
-
-def erased_link?
-  return unless @link.nil?
-  flash[:error] = "Link must have been destroyed"
-  redirect_to root_path
-
-  true
 end
