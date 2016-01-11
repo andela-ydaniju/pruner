@@ -4,6 +4,16 @@ require File.expand_path("../../config/environment", __FILE__)
 # Prevent database truncation if the environment is production
 abort("The Rails environment is running in production mode!") if
  Rails.env.production?
+
+def sign_up_with(username, email, password, password_confirmation)
+  visit signup_path
+  fill_in "Username", with: username
+  fill_in "Email", with: email
+  fill_in "Password", with: password
+  fill_in "Confirmation", with: password_confirmation
+  click_button "Create Account"
+end
+
 require "spec_helper"
 require "rspec/rails"
 require "capybara/rails"
