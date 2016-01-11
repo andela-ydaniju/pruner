@@ -5,14 +5,14 @@
         <%= form_for :session, url: sessions_path, html: { class: "signin card-panel" } do |f| %>
         <div class="row entry-signin">
           <div class="input-field">
-            <%= f.text_field :email, class: "validate" %>
             <%= f.label :email %>
+            <%= f.text_field :email, class: "validate" %>
           </div>
         </div>
         <div class="row entry-signin">
           <div class="input-field">
-            <%= f.password_field :password, class: "validate" %>
             <%= f.label :password %>
+            <%= f.password_field :password, class: "validate" %>
           </div>
         </div>
         <div class="row submit-signin">
