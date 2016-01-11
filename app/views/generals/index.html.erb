@@ -69,11 +69,10 @@
           <% @display_top_links.each do |link| %>
             <div class="col s12 m4 l4">
                 <div class="card">
-                    <div class="card-image waves-effect waves-block waves-light">
-                    </div>
                     <div class="card-content">
                         <span class="card-title activator grey-text text-darken-4"><i class="mdi-navigation-more-vert right"></i></span>
-                        <p><%= link_to (root_url + link.shortened_link.to_s), link.shortened_link %></p>
+                        <h6><%= link.url_input %></h6>
+                        <p><%= link_to (root_url + link.shortened_link.to_s), link.shortened_link, id: "act"%></p>
                         <%= link.visits %>
                     </div>
                     <div class="card-reveal">
@@ -95,10 +94,9 @@
           <% @display_latest_links.each do |link| %>
             <div class="col s12 m4 l4">
                 <div class="card">
-                    <div class="card-image waves-effect waves-block waves-light">
-                    </div>
                     <div class="card-content">
                         <span class="card-title activator grey-text text-darken-4"> <i class="mdi-navigation-more-vert right"></i></span>
+                        <h6><%= link.url_input %></h6>
                         <p><%= link_to (root_url + link.shortened_link.to_s), link.shortened_link %></p>
                         <%= time_ago_in_words(link.created_at)%> ago
                     </div>

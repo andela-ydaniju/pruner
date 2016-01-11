@@ -13,7 +13,7 @@ To install Rails visit [Ruby on Rails](http://rubyonrails.org/). [v4.2.4]
 
 1. Once you have Ruby and Rails installed, clone the repo by running
 
-  ```$ git clone https://github.com/andela-ydaniju/pruner.git```
+  ```$ git clone https://github.com/andela-ydaniju/prun.er.git```
 
 2. Then run the following command to install gem dependencies:
 

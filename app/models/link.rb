@@ -1,8 +1,9 @@
 class Link < ActiveRecord::Base
-  URL_REGEX = %r{\A(https?:\/\/)?([a-z0-9]+\.)?[a-z0-9\-]+\.[a-z]+.+[^\W\_]\z}
+  URL_REGEX =
+    %r{\A(https?:\/\/)?([a-z0-9]+\.)?[a-z0-9\-]+\.[a-z]+.+[^\W\_]\z}
 
   belongs_to :user
-  # default_scope { order(created_at: :desc) }
+
   scope :top_links, -> { order(visits: :desc).limit(9) }
   scope :latest_links, -> { order(created_at: :desc).limit(9) }
 
@@ -10,14 +11,14 @@ class Link < ActiveRecord::Base
 
   validates :url_input, format: { with: URL_REGEX }
 
-  after_initialize :init_visits, :init_enabled
+  after_initialize :init_visits, :init_erased
 
   def init_visits
     self.visits ||= 0
   end
 
-  def init_enabled
-    self.enabled ||= true
+  def init_erased
+    self.erased ||= false
   end
 
   def link_shortener
