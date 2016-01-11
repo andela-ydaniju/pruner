@@ -46,17 +46,15 @@ class LinksController < ApplicationController
   end
 
   def redirector
-    begin
-      @link = Link.find_by_shortened_link(params[:path])
-      return disabled_action unless @link.enabled
-      redirect_to @link.url_input, status: 301
-      @link.visits += 1
-      @link.save
+    @link = Link.find_by_shortened_link(params[:path])
+    return disabled_action unless @link.enabled
+    redirect_to @link.url_input, status: 301
+    @link.visits += 1
+    @link.save
 
-    rescue NoMethodError
-      flash[:error] = "Link must have been destroyed"
-      redirect_to root_path
-    end
+  rescue NoMethodError
+    flash[:error] = "Link must have been destroyed"
+    redirect_to root_path
   end
 end
 
