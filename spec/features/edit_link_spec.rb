@@ -26,4 +26,21 @@ describe "the link edit process", type: :feature do
 
     expect(page).to have_content "Link updated"
   end
+
+  it "changes nothing if data of link isn't changed" do
+    visit "/sessions/new"
+    fill_in "Email", with: "user@example.com"
+    fill_in "Password", with: "password"
+
+    click_button "Sign In"
+
+    within ".field1" do
+      find("input").set "www.userexample.com"
+    end
+    click_button "Prune Me"
+    click_link "Link Details"
+    click_button "Update"
+
+    expect(page).to have_content "No changes made"
+  end
 end

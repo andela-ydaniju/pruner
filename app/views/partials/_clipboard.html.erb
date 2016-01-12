@@ -1,7 +1,8 @@
 <br />
 <div class="url-box">
 	<div class="row">
-		<span class="white-text center"><%= link_to flash[:success], flash[:link], class: 'white-text url-link' %></span><br />
+		<span class="white-text center"><%= link_to flash[:success], flash[:link], {class: 'white-text url-link', id: "linked"}%></span>
+    <br />
 	</div>
 </div>
 <button class='btn waves-effect clip_button waves-light btn-medium brand-bg white-text regular-text' data-clipboard-text= <%= flash[:link] %>>

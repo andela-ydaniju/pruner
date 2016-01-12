@@ -27,7 +27,20 @@ describe "the link creation process", type: :feature do
     expect(page).to have_content "Mobile Friendly"
   end
 
-  it "creates new link with vanity string" do
+  it "creates new link without vanity string when signed in" do
+    visit "/sessions/new"
+    fill_in "Email", with: "user@example.com"
+    fill_in "Password", with: "password"
+
+    click_button "Sign In"
+    within ".field1" do
+      find("input").set "www.userexample.com"
+    end
+    click_button "Prune Me"
+    expect(page).to have_content "You have 1 pruned link"
+  end
+
+  it "creates new link with vanity string when signed in" do
     visit "/sessions/new"
     fill_in "Email", with: "user@example.com"
     fill_in "Password", with: "password"
