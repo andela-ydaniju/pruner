@@ -1,4 +1,4 @@
-# Pruner
+# Prun.er
 
 [![Code Climate](https://codeclimate.com/github/andela-ydaniju/prun.er/badges/gpa.svg)](https://codeclimate.com/github/andela-ydaniju/prun.er) [![Circle CI](https://circleci.com/gh/andela-ydaniju/prun.er.svg?style=svg)](https://circleci.com/gh/andela-ydaniju/prun.er) [![Coverage Status](https://coveralls.io/repos/andela-ydaniju/prun.er/badge.svg?branch=master&service=github)](https://coveralls.io/github/andela-ydaniju/prun.er?branch=master)
 
@@ -41,7 +41,7 @@ To install Rails visit [Ruby on Rails](http://rubyonrails.org/). [v4.2.4]
 
 ## Contributing
 
-1. Fork it by visiting - https://github.com/andela-ydaniju/pruner/fork
+1. Fork it by visiting - https://github.com/andela-ydaniju/prun.er/fork
 
 2. Create your feature branch
 
@@ -58,3 +58,11 @@ To install Rails visit [Ruby on Rails](http://rubyonrails.org/). [v4.2.4]
   ```$ git push origin new_feature```
 
 6. Then, create a new Pull Request
+
+## Limitations
+
+1. Redirection to other sites is not protected. Users are solely responsible for their links
+
+2. Prun.er presently have no means for user management beyond account creation
+
+3. The app is still undergoing testing for possible bugs.
