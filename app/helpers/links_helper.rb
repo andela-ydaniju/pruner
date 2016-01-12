@@ -20,10 +20,6 @@ module LinksHelper
     root_url + link.shortened_link.to_s
   end
 
-  def new_link?
-    Link.where(url_input: url_input).where(user_id: id).blank?
-  end
-
   def vanity_url_builder
     @link = Link.new(link_params)
     @link.user_id = current_user.id

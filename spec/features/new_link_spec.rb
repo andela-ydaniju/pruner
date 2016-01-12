@@ -18,7 +18,7 @@ describe "the link creation process", type: :feature do
     expect(page).to have_content "less than a minute ago"
   end
 
-  it "rejects bad urls" do
+  it "rejects bad urls for without vanity string" do
     visit "/"
     within ".field" do
       find("input").set "user@example.com"
@@ -54,5 +54,21 @@ describe "the link creation process", type: :feature do
     end
     click_button "Prune Me"
     expect(page).to have_content "mmm"
+  end
+
+  it "rejects new link with vanity string and wrong entry" do
+    visit "/sessions/new"
+    fill_in "Email", with: "user@example.com"
+    fill_in "Password", with: "password"
+
+    click_button "Sign In"
+    within ".field1" do
+      find("input").set "www@userexample.com"
+    end
+    within ".field2" do
+      find("input").set "mmm"
+    end
+    click_button "Prune Me"
+    expect(page).to have_content "create one with the form above"
   end
 end
