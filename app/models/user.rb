@@ -2,6 +2,8 @@ class User < ActiveRecord::Base
   attr_accessor :remember_token
   has_many :links, dependent: :destroy
 
+  scope :top_users, -> { order(links_count: :desc).limit(9) }
+
   before_save { self.email = email.downcase }
 
   validates :username, length: { maximum: 50 }, presence: true
