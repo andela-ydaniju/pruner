@@ -1,4 +1,5 @@
 # Prun.er
+Visit prun.er at: https://pruner.herokuapp.com
 
 [![Code Climate](https://codeclimate.com/github/andela-ydaniju/prun.er/badges/gpa.svg)](https://codeclimate.com/github/andela-ydaniju/prun.er) [![Circle CI](https://circleci.com/gh/andela-ydaniju/prun.er.svg?style=svg)](https://circleci.com/gh/andela-ydaniju/prun.er) [![Coverage Status](https://coveralls.io/repos/andela-ydaniju/prun.er/badge.svg?branch=master&service=github)](https://coveralls.io/github/andela-ydaniju/prun.er?branch=master)
 
