@@ -1,23 +1,14 @@
 require "rails_helper"
 describe "the link edit process", type: :feature do
   before :each do
-    User.create(
-      username: "kabouli",
-      email: "user@example.com",
-      password: "password",
-      password_confirmation: "password"
-    )
+    sign_up_with "omonla", "valid@example.com", "password", "password"
   end
 
   it "change target and status of link" do
-    visit "/sessions/new"
-    fill_in "Email", with: "user@example.com"
-    fill_in "Password", with: "password"
-
-    click_button "Sign In"
+    sign_in_with("valid@example.com", "password")
 
     within ".field1" do
-      find("input").set "www.userexample.com"
+      find("input").set "www.validexample.com"
     end
     click_button "Prune Me"
     click_link "Link Details"
@@ -28,14 +19,10 @@ describe "the link edit process", type: :feature do
   end
 
   it "changes nothing if data of link isn't changed" do
-    visit "/sessions/new"
-    fill_in "Email", with: "user@example.com"
-    fill_in "Password", with: "password"
-
-    click_button "Sign In"
+    sign_in_with("valid@example.com", "password")
 
     within ".field1" do
-      find("input").set "www.userexample.com"
+      find("input").set "www.validexample.com"
     end
     click_button "Prune Me"
     click_link "Link Details"

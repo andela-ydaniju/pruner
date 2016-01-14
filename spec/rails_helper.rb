@@ -14,6 +14,14 @@ def sign_up_with(username, email, password, password_confirmation)
   click_button "Create Account"
 end
 
+def sign_in_with(email, password)
+  visit "/sessions/new"
+  fill_in "Email", with: email
+  fill_in "Password", with: password
+
+  click_button "Sign In"
+end
+
 require "spec_helper"
 require "rspec/rails"
 require "capybara/rails"
