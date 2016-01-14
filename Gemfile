@@ -18,7 +18,6 @@ gem "coveralls", require: false
 gem "bcrypt", "~> 3.1.7"
 gem "zeroclipboard-rails"
 gem "will_paginate-materialize"
-gem "selenium-webdriver"
 gem "annotate"
 # Use Unicorn as the app server
 # gem 'unicorn'
@@ -34,6 +33,8 @@ group :development, :test do
   gem "rspec-rails", "~> 3.0"
   gem "factory_girl_rails", "~> 4.0"
   gem "capybara"
+  gem "database_cleaner"
+  gem "selenium-webdriver"
 end
 
 group :development do
