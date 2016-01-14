@@ -13,6 +13,6 @@ module ApplicationHelper
   end
 
   def url_format
-    "(https?://)?([a-z0-9]+\\.)?[a-z0-9\\-]+\\.[a-z]+.+[^\\W\\_]"
+    %r{(https?://)?([a-z0-9]+\\.)?[a-z0-9\\-]+\\.[a-z]+.+[^\\W\\_]}
   end
 end
