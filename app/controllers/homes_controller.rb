@@ -1,4 +1,4 @@
-class GeneralsController < ApplicationController
+class HomesController < ApplicationController
   def index
     @display_top_links = Link.top_links
     @display_latest_links = Link.latest_links

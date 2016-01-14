@@ -1,3 +1,17 @@
+# == Schema Information
+#
+# Table name: users
+#
+#  id              :integer          not null, primary key
+#  username        :string
+#  email           :string
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#  password_digest :string
+#  remember_digest :string
+#  links_count     :integer          default(0)
+#
+
 class User < ActiveRecord::Base
   attr_accessor :remember_token
   has_many :links, dependent: :destroy

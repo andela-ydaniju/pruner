@@ -18,5 +18,6 @@ $light-yellow: #ffffe0;
 $dark-yellow: #a52a2a;
 $light-pink: #ffc0cb;
 $dark-pink: #e75480;
-@import "generals";
+$transparent-form: rgba(0, 0, 0, 0.4);
+@import "homes";
 @import "users";

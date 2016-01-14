@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root to: "generals#index"
+  root to: "homes#index"
   resources :sessions, only: [:new, :create, :destroy]
   get "signup", to: "users#signup", as: "signup"
   get "signin", to: "sessions#new", as: "signin"

@@ -7,4 +7,12 @@ module ApplicationHelper
       " | " + page_title + " - " + base_title
     end
   end
+
+  def current_path
+    request.env["PATH_INFO"]
+  end
+
+  def url_format
+    "(https?://)?([a-z0-9]+\\.)?[a-z0-9\\-]+\\.[a-z]+.+[^\\W\\_]"
+  end
 end
