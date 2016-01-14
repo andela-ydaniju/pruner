@@ -338,3 +338,12 @@ textarea {
     padding-top: 1em;
   }
 }
+
+.pruner.validate {
+  background-color: rgba(0, 0, 0, 0.4);
+  color: $full-white;
+  font-size: 1.5rem;
+  height: 3rem;
+  text-align: center;
+  width: 50%;
+}
