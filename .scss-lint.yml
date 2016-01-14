@@ -97,7 +97,9 @@ linters:
     force_nesting: true
 
   NameFormat:
-    enabled: false
+    enabled: true
+    allow_leading_underscore: true
+    convention: hyphenated_lowercase # or 'camel_case', or 'snake_case', or a regex pattern
 
   NestingDepth:
     enabled: true
