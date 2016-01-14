@@ -339,7 +339,7 @@ textarea {
 }
 
 .pruner.validate {
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: $transparent-form;
   color: $full-white;
   font-size: 1rem;
   height: 3rem;

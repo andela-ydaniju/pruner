@@ -20,7 +20,7 @@
           </div>
         <% end %>
         <div class="field">
-          <%= f.text_field :url_input, pattern: "(https?://)?([a-z0-9]+\\.)?[a-z0-9\\-]+\\.[a-z]+.+[^\\W\\_]", placeholder: "Paste a link to prune", class: "pruner validate", required: true %>
+          <%= f.text_field :url_input, pattern: :url_format, placeholder: "Paste a link to prune", class: "pruner validate", required: true %>
         </div>
         <div class="actions">
           <%= f.button "Prune Me", class: "btn btn-primary"%>

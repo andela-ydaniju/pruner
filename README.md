@@ -10,6 +10,12 @@ To install Ruby visit [Ruby Lang](https://www.ruby-lang.org). [v2.0.0p647]
 
 To install Rails visit [Ruby on Rails](http://rubyonrails.org/). [v4.2.4]
 
+## External Dependencies
+See [Gemfile](Gemfile)
+
+## Features
+Prun.er has features to enable you shorten your links. As a registered user, you can customize and manage your links. If many people follow your links, it becomes popular and is shown on 'Popular Links' category. The more the links you shorten, the higher the possiblity of being in the podium as one of our 'Top Users'
+
 ## Using the App
 
 1. Once you have Ruby and Rails installed, clone the repo by running
