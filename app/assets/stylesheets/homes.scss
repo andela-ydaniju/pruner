@@ -288,10 +288,13 @@ textarea {
 
 .card {
   height: 15em;
-  overflow: hidden;
 
   .card-content p {
     margin: 15px 0;
+  }
+
+  .card-content h5 {
+    overflow: hidden;
   }
 }
 
