@@ -1,19 +1,4 @@
-# == Schema Information
-#
-# Table name: links
-#
-#  id             :integer          not null, primary key
-#  url_input      :string
-#  created_at     :datetime         not null
-#  updated_at     :datetime         not null
-#  shortened_link :string
-#  user_id        :integer
-#  visits         :integer
-#  enabled        :boolean          default(TRUE)
-#  erased         :boolean
-#
-
-module LinksHelper
+module LinkHandler
   def bool_check(stringy_bool)
     stringy_bool == "true" ? true : false
   end
@@ -29,10 +14,6 @@ module LinksHelper
   def right_user
     @link = current_user.links.find_by(id: params[:id])
     redirect_to root_url if @link.nil?
-  end
-
-  def full_url(link)
-    root_url + link.shortened_link.to_s
   end
 
   def vanity_url_builder
@@ -77,5 +58,10 @@ module LinksHelper
 
   def link_params
     params.require(:link).permit(:url_input, :shortened_link, :user_id)
+  end
+
+  def disabled_action
+    flash[:error] = "Link is disabled"
+    redirect_to root_path
   end
 end

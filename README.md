@@ -1,22 +1,23 @@
 # Prun.er
-Visit prun.er at: https://pruner.herokuapp.com
+Prun.er is a web app that allows you to shorten your ugly urls into beautifully short ones. Visit prun.er at: https://pruner.herokuapp.com
 
 [![Code Climate](https://codeclimate.com/github/andela-ydaniju/prun.er/badges/gpa.svg)](https://codeclimate.com/github/andela-ydaniju/prun.er) [![Circle CI](https://circleci.com/gh/andela-ydaniju/prun.er.svg?style=svg)](https://circleci.com/gh/andela-ydaniju/prun.er) [![Coverage Status](https://coveralls.io/repos/andela-ydaniju/prun.er/badge.svg?branch=master&service=github)](https://coveralls.io/github/andela-ydaniju/prun.er?branch=master)
 
-## Installation
+
+## Getting Started
+Clone or fork this repository or download the entire project as a zip package and run locally.
+
+## External Dependencies
 Web application is written with Ruby using the Ruby on Rails framework.
 
 To install Ruby visit [Ruby Lang](https://www.ruby-lang.org). [v2.0.0p647]
 
 To install Rails visit [Ruby on Rails](http://rubyonrails.org/). [v4.2.4]
 
-## External Dependencies
-See [Gemfile](Gemfile)
+Install [RubyGems](https://rubygems.org/) and [Bundler](http://bundler.io/) to help you manage dependencies in your [Gemfile](Gemfile).
 
-## Features
-Prun.er has features to enable you shorten your links. As a registered user, you can customize and manage your links. If many people follow your links, it becomes popular and is shown on 'Popular Links' category. The more the links you shorten, the higher the possiblity of being in the podium as one of our 'Top Users'
 
-## Using the App
+## Running the App
 
 1. Once you have Ruby and Rails installed, clone the repo by running
 
@@ -36,6 +37,7 @@ Prun.er has features to enable you shorten your links. As a registered user, you
 
 5. To access the app, visit http://localhost:3000 in a web browser
 
+
 ## Testing
 
 1. To test the web application, run the following command to carry out all tests:
@@ -45,6 +47,33 @@ Prun.er has features to enable you shorten your links. As a registered user, you
 2. To view test descriptors, run the following command:
 
   ```$ bundle exec rake spec -fd```
+
+
+## Features
+
+1. User account activation
+
+2. Statistics available for shortened urls
+
+3. Registered user can edit, delete or dectivate urls
+
+
+## Limitations
+
+1. Redirection to other sites is not protected. Users are solely responsible for their links
+
+2. Prun.er presently have no means for user management beyond account creation
+
+3. The app is still undergoing testing for possible bugs.
+
+4. Password reset service hasn't been implemented
+
+5. Email authentication hasn't been implemented
+
+6. API web service for external users is not yet implemented
+
+7. App is still on heroku leading to longer urls
+
 
 ## Contributing
 
@@ -65,11 +94,3 @@ Prun.er has features to enable you shorten your links. As a registered user, you
   ```$ git push origin new_feature```
 
 6. Then, create a new Pull Request
-
-## Limitations
-
-1. Redirection to other sites is not protected. Users are solely responsible for their links
-
-2. Prun.er presently have no means for user management beyond account creation
-
-3. The app is still undergoing testing for possible bugs.

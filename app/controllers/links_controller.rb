@@ -72,10 +72,3 @@ class LinksController < ApplicationController
     redirect_to root_path
   end
 end
-
-private
-
-def disabled_action
-  flash[:error] = "Link is disabled"
-  redirect_to root_path
-end
