@@ -7,7 +7,7 @@ RSpec.describe ApplicationHelper, type: :helper do
 
     it "returns full if page_title is given" do
       page_title = "Home"
-      expect(full_title(page_title).include? "Home").to be true
+      expect(full_title(page_title)).to have_content "Home"
     end
   end
 end

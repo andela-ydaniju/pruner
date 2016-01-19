@@ -52,12 +52,11 @@ class LinksController < ApplicationController
     current_link = Link.find(params[:id])
     if target_url == current_link.url_input && status == current_link.enabled
       flash[:alert] = "No changes made"
-      redirect_to current_user
     else
       current_link.update_attributes(url_input: target_url, enabled: status)
       flash[:success] = "Link updated"
-      redirect_to current_user
     end
+    redirect_to current_user
   end
 
   def redirector
