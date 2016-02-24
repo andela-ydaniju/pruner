@@ -10,7 +10,7 @@ Clone or fork this repository or download the entire project as a zip package an
 ## External Dependencies
 Web application is written with Ruby using the Ruby on Rails framework.
 
-To install Ruby visit [Ruby Lang](https://www.ruby-lang.org). [v2.0.0p647]
+To install Ruby visit [Ruby Lang](https://www.ruby-lang.org). [v2.3.0]
 
 To install Rails visit [Ruby on Rails](http://rubyonrails.org/). [v4.2.4]
 
