@@ -4,7 +4,7 @@ describe "the link disabling process", type: :feature do
     sign_up_with "omonla", "valid@example.com", "password", "password"
   end
 
-  it "change target and status of link" do
+  it "disables a link" do
     sign_in_with("valid@example.com", "password")
 
     within ".field1" do
