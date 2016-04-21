@@ -15,7 +15,6 @@ describe "the link disabling process", type: :feature do
     end
     click_button "Prune Me"
     click_link "Link Details"
-    # fill_in "Change Url", with: "http://facebook.come"
     find(:css, "#false_status[value='false']").set(false)
     click_button "Update"
     visit "#{root_url}/mmm"
