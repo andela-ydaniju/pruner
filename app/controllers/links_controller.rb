@@ -1,18 +1,3 @@
-# == Schema Information
-#
-# Table name: links
-#
-#  id             :integer          not null, primary key
-#  url_input      :string
-#  created_at     :datetime         not null
-#  updated_at     :datetime         not null
-#  shortened_link :string
-#  user_id        :integer
-#  visits         :integer
-#  enabled        :boolean          default(TRUE)
-#  erased         :boolean
-#
-
 class LinksController < ApplicationController
   before_action :right_user, only: :destroy
   def index
@@ -62,7 +47,7 @@ class LinksController < ApplicationController
   def redirector
     @link = Link.find_by_shortened_link(params[:path])
     return disabled_action unless @link.enabled
-    redirect_to @link.url_input, status: 301
+    redirect_to @link.url_input, status: 301, only_path: true
     @link.visits += 1
     @link.save
 
