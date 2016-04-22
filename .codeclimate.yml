@@ -1,0 +1,14 @@
+engines:
+  rubocop:
+    enabled: true
+    exclude_paths:
+    - vendor/
+  eslint:
+    enabled: false
+  scss-lint:
+    enabled: true
+
+exclude_paths:
+- vendor/**/*
+- spec/**/*
+- "**.js"
