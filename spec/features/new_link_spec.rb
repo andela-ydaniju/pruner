@@ -4,33 +4,39 @@ describe "the link creation process", type: :feature do
     sign_up_with "omonla", "valid@example.com", "password", "password"
   end
 
-  it "creates new link without vanity string when signed in" do
-    within ".field1" do
-      find("input").set "www.userexample.com"
+  context "without vanity" do
+    it "creates new link without vanity string when signed in" do
+      within ".field1" do
+        find("input").set "www.userexample.com"
+      end
+      click_button "Prune Me"
+      expect(page).to have_content "You have 1 pruned link"
     end
-    click_button "Prune Me"
-    expect(page).to have_content "You have 1 pruned link"
   end
 
-  it "creates new link with vanity string when signed in" do
-    within ".field1" do
-      find("input").set "www.userexample.com"
+  context "with vanity" do
+    it "creates new link with vanity string when signed in" do
+      within ".field1" do
+        find("input").set "www.userexample.com"
+      end
+      within ".field2" do
+        find("input").set "mmm"
+      end
+      click_button "Prune Me"
+      expect(page).to have_content "mmm"
     end
-    within ".field2" do
-      find("input").set "mmm"
-    end
-    click_button "Prune Me"
-    expect(page).to have_content "mmm"
   end
 
-  it "rejects new link with vanity string and wrong entry" do
-    within ".field1" do
-      find("input").set "www@userexample.com"
+  context "wrong entry" do
+    it "rejects new link with vanity string and wrong entry" do
+      within ".field1" do
+        find("input").set "www@userexample.com"
+      end
+      within ".field2" do
+        find("input").set "mmm"
+      end
+      click_button "Prune Me"
+      expect(page).to have_content "create one with the form above"
     end
-    within ".field2" do
-      find("input").set "mmm"
-    end
-    click_button "Prune Me"
-    expect(page).to have_content "create one with the form above"
   end
 end
