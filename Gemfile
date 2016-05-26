@@ -20,6 +20,7 @@ gem "bcrypt", "~> 3.1.7"
 gem "zeroclipboard-rails"
 gem "will_paginate-materialize"
 gem "annotate"
+gem "newrelic_rpm"
 
 group :development, :test do
   gem "pry"
