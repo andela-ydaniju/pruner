@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 module LinkHandler
   def bool_check(stringy_bool)
     stringy_bool == 'true' ? true : false

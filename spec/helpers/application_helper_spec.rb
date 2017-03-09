@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 RSpec.describe ApplicationHelper, type: :helper do
   describe '#full_title' do
     it 'returns base_title if no page_title' do

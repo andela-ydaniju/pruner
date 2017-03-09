@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 require 'rails_helper'
 describe 'the link creation process', type: :feature do
   before :each do
