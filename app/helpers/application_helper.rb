@@ -1,15 +1,15 @@
 module ApplicationHelper
-  def full_title(page_title = "")
-    base_title = "for the finest of links"
+  def full_title(page_title = '')
+    base_title = 'for the finest of links'
     if page_title.empty?
-      " - " + base_title
+      ' - ' + base_title
     else
-      " | " + page_title + " - " + base_title
+      ' | ' + page_title + ' - ' + base_title
     end
   end
 
   def current_path
-    request.env["PATH_INFO"]
+    request.env['PATH_INFO']
   end
 
   def url_format

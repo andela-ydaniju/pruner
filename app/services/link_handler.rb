@@ -1,6 +1,6 @@
 module LinkHandler
   def bool_check(stringy_bool)
-    stringy_bool == "true" ? true : false
+    stringy_bool == 'true' ? true : false
   end
 
   def vanity_string
@@ -42,7 +42,7 @@ module LinkHandler
   end
 
   def link_failure_flash
-    flash[:error] = "An error occurred in creating link, please try again"
+    flash[:error] = 'An error occurred in creating link, please try again'
   end
 
   def link_success_flash
@@ -51,8 +51,8 @@ module LinkHandler
   end
 
   def http_prefixer(url)
-    poor_url = url.split("www.").join
-    return poor_url unless poor_url.split(":")[1].nil?
+    poor_url = url.split('www.').join
+    return poor_url unless poor_url.split(':')[1].nil?
     "http://#{poor_url}"
   end
 
@@ -61,7 +61,7 @@ module LinkHandler
   end
 
   def disabled_action
-    flash[:error] = "Link is disabled"
+    flash[:error] = 'Link is disabled'
     redirect_to root_path
   end
 end

@@ -17,11 +17,11 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      flash[:success] = "Your registration was successful!"
+      flash[:success] = 'Your registration was successful!'
       sign_in(@user)
       redirect_to @user
     else
-      render "signup"
+      render 'signup'
     end
   end
 
