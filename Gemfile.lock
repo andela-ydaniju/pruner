@@ -214,6 +214,9 @@ GEM
       activesupport (>= 5.0.0)
       minitest
       nokogiri (>= 1.6)
+    rails-env-favicon (0.0.5)
+      railties (>= 3.1)
+      tinycon-rails
     rails-html-sanitizer (1.6.0)
       loofah (~> 2.21)
       nokogiri (~> 1.14)
@@ -315,6 +318,8 @@ GEM
     tins (1.33.0)
       bigdecimal
       sync
+    tinycon-rails (0.0.1)
+      railties (>= 3.1)
     turbolinks (5.2.1)
       turbolinks-source (~> 5.2)
     turbolinks-source (5.2.0)
@@ -358,6 +363,7 @@ DEPENDENCIES
   pg
   puma
   rails
+  rails-env-favicon (~> 0.0.5)
   rails_12factor
   rspec-rails
   rubocop
