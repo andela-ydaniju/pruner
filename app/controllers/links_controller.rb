@@ -39,7 +39,7 @@ class LinksController < ApplicationController
     if target_url == current_link.url_input && status == current_link.enabled
       flash[:alert] = 'No changes made'
     else
-      current_link.update_attributes(url_input: target_url, enabled: status)
+      current_link.update(url_input: target_url, enabled: status)
       flash[:success] = 'Link updated'
     end
     redirect_to current_user
@@ -48,7 +48,7 @@ class LinksController < ApplicationController
   def redirector
     @link = Link.find_by_shortened_link(params[:path])
     return disabled_action unless @link.enabled
-    redirect_to @link.url_input, status: 301, only_path: true
+    redirect_to @link.url_input, status: 301, only_path: true, allow_other_host: true
     @link.visits += 1
     @link.save
 
