@@ -16,4 +16,11 @@ class RedirectionController < ApplicationController
     flash[:error] = 'Link must have been destroyed'
     redirect_to root_path
   end
+
+  private
+
+  def disabled_action
+    flash[:error] = 'Link is disabled'
+    redirect_to root_path
+  end
 end

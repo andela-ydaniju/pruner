@@ -15,7 +15,8 @@ class LinksController < ApplicationController
       link_failure_flash
     end
 
-    redirect_to current_user if signed_in?
+    redirect_path = signed_in? ? current_user : root_path
+    redirect_to redirect_path
   end
 
   def destroy

@@ -14,6 +14,7 @@ module ApplicationHelper
   end
 
   def url_format
-    %r{(https?://)?([a-z0-9]+\\.)?[a-z0-9\\-]+\\.[a-z]+.+[^\\W\\_]}
+    %r{^(http|https):\/\/[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$}
   end
 end
+

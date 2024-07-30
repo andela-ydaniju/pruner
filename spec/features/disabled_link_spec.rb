@@ -19,6 +19,6 @@ describe 'the link disabling process', type: :feature do
     find(:css, "#false_status[value='false']").set(false)
     click_button 'Update'
     visit "#{root_url}/mmm"
-    expect(page).to have_content 'Link update failed'
+    expect(page).to have_content 'Link is disabled'
   end
 end

@@ -1,10 +1,10 @@
-$(document).ready(function(){
-	var clip = new ZeroClipboard($(".clip_button"));
-	$(".clip_button").click(function() {
+//= require materialize
+
+$(document).ready(function () {
+  var clip = new ZeroClipboard($(".clip_button"));
+  $(".clip_button").click(function () {
 		clip = new ZeroClipboard($(".clip_button"));
-    	Materialize.toast(
-			"Link copied to Clipboard",
-    		3000, "blue white-text squared"
-		);
-  	});
+
+    M.toast({ html: 'Link copied to Clipboard', displayLength: 3000, classes: 'blue white-text squared' });
+  });
 });
