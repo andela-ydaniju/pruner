@@ -43,10 +43,5 @@ class LinkService
     def link_params_from(params)
       params.require(:link).permit(:url_input, :shortened_link, :user_id)
     end
-
-    def disabled_action
-      flash[:error] = 'Link is disabled'
-      redirect_to root_path
-    end
   end
 end

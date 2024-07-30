@@ -5,7 +5,7 @@
     <h3>Manage this Short Link</h3>
     <%= form_for @link, url: { method: :patch, action: :update } do |f| %>
       <%= f.label :url_input, "Change Url" %>
-      <%= f.text_field "url_input", placeholder: "Enter new Url", pattern: "(https?://)?([a-z0-9]+\\.)?[a-z0-9\\-]+\\.[a-z]+.+[^\\W\\_]", value: @link.url_input, required: true %>
+      <%= f.text_field "url_input", placeholder: "Enter new Url", pattern: url_format, value: @link.url_input, required: true %>
       <p class="status-wrapper">
         <%= f.radio_button :enabled, true, id: "true_status", checked: true %>
         <%= f.label :enabled, "enabled", for: "true_status" %>

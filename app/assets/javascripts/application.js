@@ -15,6 +15,5 @@
 //= require turbolinks
 //= require modernizr
 //= require zeroclipboard
-//= require materialize
 //= require rails_env_favicon
 //= require_tree .

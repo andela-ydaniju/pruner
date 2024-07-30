@@ -3,7 +3,7 @@
     <div class="card-content">
       <h5><%= link.url_input %></h5>
       <%= root_url + link.shortened_link.to_s %>
-      <p><%= link_to "Link Details", edit_path(link.id) %> | <%= link_to "Delete", link, method: :delete, data:
+      <p><%= link_to "Link Details", edit_link_path(link.id) %> | <%= link_to "Delete", link, method: :delete, data:
       { confirm: "Do you want to delete this link?" } %> </p>
       <p>Enabled: <%= link.enabled %></p>
     </div>
