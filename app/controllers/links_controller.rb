@@ -1,23 +1,21 @@
 # frozen_string_literal: true
 class LinksController < ApplicationController
-  before_action :right_user, only: :destroy
-  def index
-  end
+  before_action :verify_user_can_delete, only: :destroy
 
-  def show
-  end
+  def index; end
+
+  def show; end
 
   def create
-    if signed_in?
-      if new_link_with_vanity_string?
-        vanity_url_builder
-      else
-        ordinary_url_builder
-      end
-      redirect_to current_user
+    @result = LinkService.create_link(params: params, user: current_user)
+
+    if @result.success
+      link_success_flash(@result.link)
     else
-      ordinary_url_builder
+      link_failure_flash
     end
+
+    redirect_to current_user if signed_in?
   end
 
   def destroy
@@ -32,28 +30,30 @@ class LinksController < ApplicationController
   end
 
   def update
-    updated_params = params.require(:link).permit(:url_input, :enabled)
-    target_url = http_prefixer(updated_params[:url_input])
-    status = bool_check(updated_params[:enabled])
+    update_params = params.require(:link).permit(:url_input, :enabled)
     current_link = Link.find(params[:id])
-    if target_url == current_link.url_input && status == current_link.enabled
-      flash[:alert] = 'No changes made'
-    else
-      current_link.update(url_input: target_url, enabled: status)
+
+    if current_link.update(update_params)
       flash[:success] = 'Link updated'
+    else
+      flash[:error] = 'Link update failed'
     end
     redirect_to current_user
   end
 
-  def redirector
-    @link = Link.find_by_shortened_link(params[:path])
-    return disabled_action unless @link.enabled
-    redirect_to @link.url_input, status: 301, only_path: true, allow_other_host: true
-    @link.visits += 1
-    @link.save
+  private
 
-  rescue NoMethodError
-    flash[:error] = 'Link must have been destroyed'
-    redirect_to root_path
+  def verify_user_can_delete
+    @link = current_user.links.find_by(id: params[:id])
+    redirect_to root_url if @link.nil?
+  end
+
+  def link_failure_flash
+    flash[:error] = 'An error occurred in creating link, please try again'
+  end
+
+  def link_success_flash(link)
+    flash[:link] = full_url(link)
+    flash[:success] = "Link successfully created #{flash[:link]}"
   end
 end

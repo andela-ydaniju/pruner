@@ -11,5 +11,5 @@ Rails.application.routes.draw do
   post 'links/:id' => 'links#update'
   resources :links, only: [:create, :destroy, :update]
   resources :generals
-  get '/:path' => 'links#redirector'
+  get '/:path' => 'redirection#show'
 end
