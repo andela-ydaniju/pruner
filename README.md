@@ -1,9 +1,6 @@
 # Prun.er
 Prun.er is a web app that allows you to shorten your ugly urls into beautifully short ones. Visit prun.er at: https://pruner.herokuapp.com
 
-[![Code Climate](https://codeclimate.com/github/andela-ydaniju/prun.er/badges/gpa.svg)](https://codeclimate.com/github/andela-ydaniju/prun.er) [![Circle CI](https://circleci.com/gh/andela-ydaniju/prun.er.svg?style=svg)](https://circleci.com/gh/andela-ydaniju/prun.er) [![Coverage Status](https://coveralls.io/repos/andela-ydaniju/prun.er/badge.svg?branch=master&service=github)](https://coveralls.io/github/andela-ydaniju/prun.er?branch=master)
-
-
 ## Getting Started
 Clone or fork this repository or download the entire project as a zip package and run locally.
 
@@ -21,7 +18,7 @@ Install [RubyGems](https://rubygems.org/) and [Bundler](http://bundler.io/) to h
 
 1. Once you have Ruby and Rails installed, clone the repo by running
 
-  ```$ git clone https://github.com/andela-ydaniju/prun.er.git```
+  ```$ git clone https://github.com/ydaniju/prun.er.git```
 
 2. Then run the following command to install gem dependencies:
 
@@ -77,7 +74,7 @@ Install [RubyGems](https://rubygems.org/) and [Bundler](http://bundler.io/) to h
 
 ## Contributing
 
-1. Fork it by visiting - https://github.com/andela-ydaniju/prun.er/fork
+1. Fork it by visiting - https://github.com/ydaniju/prun.er/fork
 
 2. Create your feature branch
 

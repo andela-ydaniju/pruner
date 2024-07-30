@@ -32,6 +32,7 @@ group :test do
   gem 'ci_reporter'
   gem 'ci_reporter_rspec'
   gem 'brakeman', require: false
+  gem 'rails-controller-testing'
 end
 
 group :production do
