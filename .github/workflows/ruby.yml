@@ -46,6 +46,8 @@ jobs:
       with:
         # ruby-version: ${{ matrix.ruby-version }} using .ruby-version file
         bundler-cache: true # runs 'bundle install' and caches installed gems automatically
+    - name: Install libssl
+      run: sudo apt install -y libssl-dev
     - name: Create database
       run: bundle exec rails db:create && bundle exec rails db:migrate
     - name: Run tests
