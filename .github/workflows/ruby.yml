@@ -9,16 +9,15 @@ name: Ruby
 
 on:
   push:
-    branches: [ "master" ]
+    branches: ["master"]
   pull_request:
-    branches: [ "master" ]
+    branches: ["master"]
 
 permissions:
   contents: read
 
 jobs:
   test:
-
     runs-on: ubuntu-latest
 
     services:
@@ -27,7 +26,7 @@ jobs:
         ports:
           - 5432:5432
         env:
-          POSTGRES_DB: postgres        
+          POSTGRES_DB: postgres
           POSTGRES_PASSWORD: postgres
           POSTGRES_USER: postgres
         # Set health checks to wait until postgres has started
@@ -37,18 +36,18 @@ jobs:
           --health-timeout 5s
           --health-retries 5
     steps:
-    - uses: actions/checkout@v4  
-    - name: Install libssl
-      run: sudo apt install -y libssl-dev
-    - name: Set up Ruby
-    # To automatically get bug fixes and new Ruby versions for ruby/setup-ruby,
-    # change this to (see https://github.com/ruby/setup-ruby#versioning):
-    # uses: ruby/setup-ruby@v1
-      uses: ruby/setup-ruby@v1 # v1.146.0
-      with:
-        # ruby-version: ${{ matrix.ruby-version }} using .ruby-version file
-        bundler-cache: true # runs 'bundle install' and caches installed gems automatically
-    - name: Create database
-      run: RAILS_ENV=test POSTGRES_USER=postgres POSTGRES_PASSWORD=postgres bundle exec rails db:create && bundle exec rails db:migrate
-    - name: Run tests
-      run: RAILS_ENV=test bundle exec rake spec
+      - uses: actions/checkout@v4
+      - name: Install libssl
+        run: sudo apt install -y libssl-dev
+      - name: Set up Ruby
+        # To automatically get bug fixes and new Ruby versions for ruby/setup-ruby,
+        # change this to (see https://github.com/ruby/setup-ruby#versioning):
+        # uses: ruby/setup-ruby@v1
+        uses: ruby/setup-ruby@v1 # v1.146.0
+        with:
+          # ruby-version: ${{ matrix.ruby-version }} using .ruby-version file
+          bundler-cache: true # runs 'bundle install' and caches installed gems automatically
+      - name: Create database
+        run: RAILS_ENV=ci bundle exec rails db:create && bundle exec rails db:migrate
+      - name: Run tests
+        run: RAILS_ENV=ci bundle exec rake spec
