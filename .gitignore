@@ -22,3 +22,4 @@
 # Ignore specs coverage
 /coverage/.resultset.json
 /coverage/.last_run.json
+/spec/reports
