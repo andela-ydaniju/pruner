@@ -3,34 +3,35 @@ source 'https://rubygems.org'
 
 ruby '3.3.3'
 
-gem 'rails'
-gem 'sass-rails'
-gem 'uglifier'
-gem 'will_paginate'
-gem 'materialize-sass'
+gem 'annotate'
+gem 'bcrypt'
+gem 'coveralls'
 gem 'faker'
 gem 'font-awesome-sass'
+gem 'importmap-rails'
+gem 'materialize-sass'
 gem 'modernizr-rails'
-gem 'turbolinks'
-gem 'coveralls'
-gem 'bcrypt'
-gem 'annotate'
+gem 'uglifier'
 gem 'pg'
+gem 'rails'
+gem 'sass-rails'
+gem 'turbolinks'
+gem 'will_paginate'
 
 group :development, :test do
-  gem 'pry-rails'
-  gem 'rspec-rails'
-  gem 'factory_bot_rails'
   gem 'capybara'
   gem 'database_cleaner'
-  gem 'selenium-webdriver'
+  gem 'factory_bot_rails'
+  gem 'pry-rails'
   gem 'rubocop'
+  gem 'rspec-rails'
+  gem 'selenium-webdriver'
 end
 
 group :test do
+  gem 'brakeman', require: false
   gem 'ci_reporter'
   gem 'ci_reporter_rspec'
-  gem 'brakeman', require: false
   gem 'rails-controller-testing'
 end
 
