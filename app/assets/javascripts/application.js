@@ -10,10 +10,6 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require jquery
-//= require jquery_ujs
-//= require turbolinks
-//= require modernizr
-//= require zeroclipboard
 //= require rails_env_favicon
 //= require_tree .
+

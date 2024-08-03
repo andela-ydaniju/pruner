@@ -1,10 +1,7 @@
-//= require materialize
+(function () {
+  var clipButton = document.getElementById("clip_button");
 
-$(document).ready(function () {
-  var clip = new ZeroClipboard($(".clip_button"));
-  $(".clip_button").click(function () {
-		clip = new ZeroClipboard($(".clip_button"));
-
-    M.toast({ html: 'Link copied to Clipboard', displayLength: 3000, classes: 'blue white-text squared' });
+  clipButton?.addEventListener("click", () => {
+    navigator.clipboard.writeText("something copied")
   });
-});
+})();
