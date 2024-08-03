@@ -10,7 +10,6 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require turbolinks
-//= require modernizr
 //= require rails_env_favicon
 //= require_tree .
+

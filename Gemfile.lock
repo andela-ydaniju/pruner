@@ -168,7 +168,6 @@ GEM
     mini_mime (1.1.5)
     minitest (5.24.1)
     mize (0.6.0)
-    modernizr-rails (2.7.1)
     mutex_m (0.2.0)
     net-imap (0.4.14)
       date
@@ -336,13 +335,12 @@ GEM
       sync
     tinycon-rails (0.0.1)
       railties (>= 3.1)
-    turbolinks (5.2.1)
-      turbolinks-source (~> 5.2)
-    turbolinks-source (5.2.0)
+    turbo-rails (2.0.6)
+      actionpack (>= 6.0.0)
+      activejob (>= 6.0.0)
+      railties (>= 6.0.0)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
-    uglifier (4.2.0)
-      execjs (>= 0.3.0, < 3)
     unicode-display_width (2.5.0)
     webrick (1.8.1)
     websocket (1.2.11)
@@ -372,7 +370,6 @@ DEPENDENCIES
   font-awesome-sass
   importmap-rails
   materialize-sass
-  modernizr-rails
   pg
   pry-rails
   puma
@@ -384,9 +381,9 @@ DEPENDENCIES
   rubocop
   sass-rails
   selenium-webdriver
-  turbolinks
+  sprockets
+  turbo-rails
   tzinfo-data
-  uglifier
   will_paginate
 
 RUBY VERSION
